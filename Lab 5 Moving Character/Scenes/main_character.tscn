@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://tfq3pp1u838k"]
+
+[ext_resource type="Script" path="res://Scenes/main_character.gd" id="1_6hlhd"]
+[ext_resource type="Texture2D" uid="uid://bgue0kg12hhsg" path="res://Scenes/frog-R-1 (1).png" id="2_d0r4i"]
+[ext_resource type="Texture2D" uid="uid://dxrk33ivxb6b5" path="res://Scenes/jump.png" id="3_apu5f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_643vr"]
+atlas = ExtResource("2_d0r4i")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntyn4"]
+atlas = ExtResource("2_d0r4i")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh54u"]
+atlas = ExtResource("2_d0r4i")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uobmn"]
+atlas = ExtResource("2_d0r4i")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puy6i"]
+atlas = ExtResource("3_apu5f")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfq5o"]
+atlas = ExtResource("3_apu5f")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfhq6"]
+atlas = ExtResource("3_apu5f")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t18da"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_643vr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntyn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vh54u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uobmn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puy6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfq5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfhq6")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enc4r"]
+size = Vector2(30.3333, 24.3333)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_6hlhd")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-197.333, 136)
+scale = Vector2(1.32292, 1.32292)
+sprite_frames = SubResource("SpriteFrames_t18da")
+animation = &"jump"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-197.333, 134)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_enc4r")
