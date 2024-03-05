@@ -41,9 +41,6 @@ func _physics_process(delta):
 
 
 	
-func _process(delta):
-	var mouse_pos = get_global_mouse_position()
-	var player_pos = get_global_position()
 
 	if Input.is_action_pressed("input_left"):
 		sprite_2d.animation = "ma-left"
@@ -54,6 +51,14 @@ func _process(delta):
 	else:
 		sprite_2d.animation = "ma-down"
 	
-	#var flip = velocity.x < 0
-	#sprite_2d.flip_h = flip
+func _process(delta):
+	var mouse_pos = get_global_mouse_position()
+	var player_pos = get_global_position()
 
+
+
+
+func _on_tongue_hooked(hooked_position):
+	await get_tree().create_timer(0.2).timeout
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position", hooked_position,0.75)

@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bldae3kbycf61"]
+[gd_scene load_steps=10 format=3 uid="uid://bldae3kbycf61"]
 
 [ext_resource type="Texture2D" uid="uid://ttgqulgodo3m" path="res://bg-solid.jpeg" id="1_jy6m0"]
 [ext_resource type="Texture2D" uid="uid://bdqke3x35qlek" path="res://Terrain (16x16).png" id="2_gpsi8"]
 [ext_resource type="PackedScene" uid="uid://tfq3pp1u838k" path="res://Scenes/main_character.tscn" id="3_jtcbk"]
-[ext_resource type="Texture2D" uid="uid://b3lj7gkged1mg" path="res://icon.svg" id="4_758l7"]
+[ext_resource type="Texture2D" uid="uid://dsnt3x7aoy3wq" path="res://index.icon.png" id="4_8v5f6"]
 [ext_resource type="Script" path="res://pivot.gd" id="4_qmk0w"]
 [ext_resource type="Script" path="res://Tongue.gd" id="5_xw844"]
 
@@ -455,6 +455,9 @@ texture = ExtResource("2_gpsi8")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_gxtuh")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsl46"]
+size = Vector2(57, 56)
+
 [node name="Node" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -482,15 +485,29 @@ layer_0/tile_data = PackedInt32Array(1179645, 458752, 0, 1245181, 589824, 0, 131
 position = Vector2(365, 123)
 scale = Vector2(1.5, 1.5)
 
-[node name="pivot" type="Node2D" parent="."]
+[node name="pivot" type="Node2D" parent="CharacterBody2D"]
+position = Vector2(-212.667, 115.333)
+scale = Vector2(0.666667, 0.666667)
 script = ExtResource("4_qmk0w")
 
-[node name="Tongue" type="Sprite2D" parent="pivot"]
+[node name="Tongue" type="Sprite2D" parent="CharacterBody2D/pivot"]
 texture_repeat = 2
-position = Vector2(242.204, 45.8648)
-rotation = 3.14159
-scale = Vector2(0.187029, -0.280497)
-texture = ExtResource("4_758l7")
+position = Vector2(18, 2)
+rotation = -1.5708
+texture = ExtResource("4_8v5f6")
 region_enabled = true
-region_rect = Rect2(0, 0, 122, 125)
+region_rect = Rect2(0, 0, 10, 64)
 script = ExtResource("5_xw844")
+
+[node name="RayCast2D" type="RayCast2D" parent="CharacterBody2D/pivot/Tongue"]
+position = Vector2(1, -16)
+target_position = Vector2(0, 150)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+position = Vector2(41, 26)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(175, 34)
+shape = SubResource("RectangleShape2D_rsl46")
+
+[connection signal="hooked" from="CharacterBody2D/pivot/Tongue" to="CharacterBody2D" method="_on_tongue_hooked"]
