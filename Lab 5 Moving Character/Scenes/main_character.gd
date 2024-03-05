@@ -19,7 +19,6 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		sprite_2d.animation = "jump"
 	
 	if Input.is_action_just_pressed("ui_accept") and not is_on_floor():
 		velocity.y += -500.0
@@ -39,9 +38,22 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-	var flip = velocity.x < 0
-	sprite_2d.flip_h = flip
+
+
 	
 func _process(delta):
 	var mouse_pos = get_global_mouse_position()
 	var player_pos = get_global_position()
+
+	if Input.is_action_pressed("input_left"):
+		sprite_2d.animation = "ma-left"
+	elif Input.is_action_pressed("input_right"):
+		sprite_2d.animation = "ma-right"
+	elif Input.is_action_pressed("input_up"):
+		sprite_2d.animation = "ma-up"
+	else:
+		sprite_2d.animation = "ma-down"
+	
+	#var flip = velocity.x < 0
+	#sprite_2d.flip_h = flip
+
