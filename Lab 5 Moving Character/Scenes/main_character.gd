@@ -41,3 +41,7 @@ func _physics_process(delta):
 	
 	var flip = velocity.x < 0
 	sprite_2d.flip_h = flip
+	
+func _process(delta):
+	var mouse_pos = get_global_mouse_position()
+	var player_pos = get_global_position()

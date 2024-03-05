@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bldae3kbycf61"]
+[gd_scene load_steps=9 format=3 uid="uid://bldae3kbycf61"]
 
 [ext_resource type="Texture2D" uid="uid://ttgqulgodo3m" path="res://bg-solid.jpeg" id="1_jy6m0"]
 [ext_resource type="Texture2D" uid="uid://bdqke3x35qlek" path="res://Terrain (16x16).png" id="2_gpsi8"]
 [ext_resource type="PackedScene" uid="uid://tfq3pp1u838k" path="res://Scenes/main_character.tscn" id="3_jtcbk"]
+[ext_resource type="Texture2D" uid="uid://b3lj7gkged1mg" path="res://icon.svg" id="4_758l7"]
+[ext_resource type="Script" path="res://pivot.gd" id="4_qmk0w"]
+[ext_resource type="Script" path="res://Tongue.gd" id="5_xw844"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gxtuh"]
 texture = ExtResource("2_gpsi8")
@@ -478,3 +481,16 @@ layer_0/tile_data = PackedInt32Array(1179645, 458752, 0, 1245181, 589824, 0, 131
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_jtcbk")]
 position = Vector2(365, 123)
 scale = Vector2(1.5, 1.5)
+
+[node name="pivot" type="Node2D" parent="."]
+script = ExtResource("4_qmk0w")
+
+[node name="Tongue" type="Sprite2D" parent="pivot"]
+texture_repeat = 2
+position = Vector2(242.204, 45.8648)
+rotation = 3.14159
+scale = Vector2(0.187029, -0.280497)
+texture = ExtResource("4_758l7")
+region_enabled = true
+region_rect = Rect2(0, 0, 122, 125)
+script = ExtResource("5_xw844")
