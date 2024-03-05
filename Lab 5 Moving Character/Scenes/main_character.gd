@@ -61,4 +61,8 @@ func _process(delta):
 func _on_tongue_hooked(hooked_position):
 	await get_tree().create_timer(0.2).timeout
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", hooked_position,0.75)
+	print(self.get_position(), hooked_position)
+	
+	tween.tween_property(self, "position",Vector2(hooked_position), 1)
+	print(self.get_position(), hooked_position)
+	velocity = self.get_position() - hooked_position

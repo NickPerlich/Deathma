@@ -129,18 +129,19 @@ animations = [{
 size = Vector2(30.3333, 24.3333)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(-40, 8)
 scale = Vector2(3, 3)
 script = ExtResource("1_6hlhd")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-213.5, 119.833)
+position = Vector2(12.3333, -3.33332)
 scale = Vector2(1.82813, 1.82813)
 sprite_frames = SubResource("SpriteFrames_obbra")
 animation = &"ma-up"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-212, 121.667)
+position = Vector2(12.3333, -2)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_enc4r")
