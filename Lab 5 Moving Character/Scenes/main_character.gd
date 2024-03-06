@@ -5,6 +5,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var sprite_2d = $Sprite2D
 @onready var healthbar = $Healthbar
+var bulletCount = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -82,7 +83,7 @@ func _on_tongue_hooked(hooked_position):
 	var tween = get_tree().create_tween()
 	print(self.get_position(), hooked_position)
 	
-	tween.tween_property(self, "position",Vector2(hooked_position), 1)
+	tween.tween_property(self, "position",Vector2(hooked_position), .5)
 	print(self.get_position(), hooked_position)
 	velocity = self.get_position() - hooked_position
 
@@ -93,4 +94,4 @@ func shoot(mouse_position):
 	projectile.position = $Node2D/Marker2D.global_position
 	var direction = (mouse_position - projectile.global_position).normalized()
 	projectile.velocityy = direction
-	print("shoot")
+	

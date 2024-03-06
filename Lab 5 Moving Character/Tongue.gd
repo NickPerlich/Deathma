@@ -19,7 +19,7 @@ func _input(event):
 		reverse_interpolate()
 
 func reverse_interpolate():
-	interpolate(0,0.75)
+	interpolate(0,0.55)
 	
 func check_collision():
 	await get_tree().create_timer(0.1).timeout
