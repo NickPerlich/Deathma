@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bldae3kbycf61"]
+[gd_scene load_steps=13 format=3 uid="uid://bldae3kbycf61"]
 
 [ext_resource type="Texture2D" uid="uid://ttgqulgodo3m" path="res://bg-solid.jpeg" id="1_jy6m0"]
 [ext_resource type="Texture2D" uid="uid://bdqke3x35qlek" path="res://Terrain (16x16).png" id="2_gpsi8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dsnt3x7aoy3wq" path="res://index.icon.png" id="4_8v5f6"]
 [ext_resource type="Script" path="res://pivot.gd" id="4_qmk0w"]
 [ext_resource type="Script" path="res://Tongue.gd" id="5_xw844"]
+[ext_resource type="Texture2D" uid="uid://b3lj7gkged1mg" path="res://icon.svg" id="7_odhue"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gxtuh"]
 texture = ExtResource("2_gpsi8")
@@ -458,6 +459,11 @@ sources/0 = SubResource("TileSetAtlasSource_gxtuh")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsl46"]
 size = Vector2(57, 56)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sfylx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6ibr"]
+size = Vector2(118, 112)
+
 [node name="Node" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -510,5 +516,15 @@ position = Vector2(41, 26)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
 position = Vector2(175, 34)
 shape = SubResource("RectangleShape2D_rsl46")
+
+[node name="table" type="StaticBody2D" parent="." groups=["Collectibles"]]
+physics_material_override = SubResource("PhysicsMaterial_sfylx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="table"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_u6ibr")
+
+[node name="Sprite2D" type="Sprite2D" parent="table"]
+texture = ExtResource("7_odhue")
 
 [connection signal="hooked" from="CharacterBody2D/pivot/Tongue" to="CharacterBody2D" method="_on_tongue_hooked"]
