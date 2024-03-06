@@ -15,8 +15,6 @@ func _ready():
 	
 
 func _physics_process(delta):
-	if velocity.y == 0:
-		sprite_2d.animation = "default"
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -59,9 +57,11 @@ func _physics_process(delta):
 		if health > 0:
 			healthbar.decrease_health(1)
 		sprite_2d.animation = "ma-up"
-	else:
+	elif Input.is_action_pressed("input_down"):
 		sprite_2d.animation = "ma-down"
-	
+	else:
+		sprite_2d.animation = "default"
+		
 func _process(delta):
 	var mouse_pos = get_global_mouse_position()
 	var player_pos = get_global_position()
