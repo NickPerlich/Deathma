@@ -10,8 +10,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
-	if velocity.y == 0:
-		sprite_2d.animation = "default"
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -48,9 +46,11 @@ func _physics_process(delta):
 		sprite_2d.animation = "ma-right"
 	elif Input.is_action_pressed("input_up"):
 		sprite_2d.animation = "ma-up"
-	else:
+	elif Input.is_action_pressed("input_down"):
 		sprite_2d.animation = "ma-down"
-	
+	else:
+		sprite_2d.animation = "default"
+		
 func _process(delta):
 	var mouse_pos = get_global_mouse_position()
 	var player_pos = get_global_position()
