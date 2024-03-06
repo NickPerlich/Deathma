@@ -4,14 +4,17 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var sprite_2d = $Sprite2D
+@onready var healthbar = $Healthbar
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var health = 100 : set = _set_health
 
+func _ready():
+	healthbar.init_health(health)
+	
 
 func _physics_process(delta):
-	if velocity.y == 0:
-		sprite_2d.animation = "default"
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -41,19 +44,32 @@ func _physics_process(delta):
 
 
 	
-
+	#need to remove health bar from here, for testing
 	if Input.is_action_pressed("input_left"):
+		if health > 0:
+			healthbar.decrease_health(1)
 		sprite_2d.animation = "ma-left"
 	elif Input.is_action_pressed("input_right"):
+		if health > 0:
+			healthbar.decrease_health(1)
 		sprite_2d.animation = "ma-right"
 	elif Input.is_action_pressed("input_up"):
+		if health > 0:
+			healthbar.decrease_health(1)
 		sprite_2d.animation = "ma-up"
-	else:
+	elif Input.is_action_pressed("input_down"):
 		sprite_2d.animation = "ma-down"
-	
+	else:
+		sprite_2d.animation = "default"
+		
 func _process(delta):
 	var mouse_pos = get_global_mouse_position()
 	var player_pos = get_global_position()
+	
+func _set_health(value):
+	#if health <= 0
+		#die
+	healthbar.health = health
 
 
 
