@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+const projectilePath = preload("res://projectile.tscn")
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var sprite_2d = $Sprite2D
@@ -65,6 +65,9 @@ func _physics_process(delta):
 func _process(delta):
 	var mouse_pos = get_global_mouse_position()
 	var player_pos = get_global_position()
+	$Node2D.look_at(mouse_pos)
+	if Input.is_action_just_pressed("shoot"):
+		shoot(mouse_pos)
 	
 func _set_health(value):
 	#if health <= 0
@@ -82,3 +85,12 @@ func _on_tongue_hooked(hooked_position):
 	tween.tween_property(self, "position",Vector2(hooked_position), 1)
 	print(self.get_position(), hooked_position)
 	velocity = self.get_position() - hooked_position
+
+func shoot(mouse_position):
+	var projectile = projectilePath.instantiate()
+	get_parent().add_child(projectile)
+	
+	projectile.position = $Node2D/Marker2D.global_position
+	var direction = (mouse_position - projectile.global_position).normalized()
+	projectile.velocityy = direction
+	print("shoot")

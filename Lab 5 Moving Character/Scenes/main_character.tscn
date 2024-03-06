@@ -145,3 +145,10 @@ autoplay = "default"
 position = Vector2(12.3333, -2)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_enc4r")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(12.6667, -2.33333)
+rotation = -4.00902
+
+[node name="Marker2D" type="Marker2D" parent="Node2D"]
+position = Vector2(49.4244, 0.0429707)

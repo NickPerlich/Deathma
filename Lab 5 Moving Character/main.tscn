@@ -511,11 +511,13 @@ offset_top = -42.0
 offset_right = 35.0
 offset_bottom = -36.0
 
-[node name="Walls" type="StaticBody2D" parent="."]
+[node name="Walls" type="StaticBody2D" parent="." groups=["collectable"]]
 position = Vector2(41, 26)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
 position = Vector2(175, 34)
 shape = SubResource("RectangleShape2D_rsl46")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [connection signal="hooked" from="CharacterBody2D/pivot/Tongue" to="CharacterBody2D" method="_on_tongue_hooked"]
