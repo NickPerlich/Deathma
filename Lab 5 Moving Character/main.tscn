@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bldae3kbycf61"]
+[gd_scene load_steps=11 format=3 uid="uid://bldae3kbycf61"]
 
 [ext_resource type="Texture2D" uid="uid://ttgqulgodo3m" path="res://bg-solid.jpeg" id="1_jy6m0"]
 [ext_resource type="Texture2D" uid="uid://bdqke3x35qlek" path="res://Terrain (16x16).png" id="2_gpsi8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dsnt3x7aoy3wq" path="res://index.icon.png" id="4_8v5f6"]
 [ext_resource type="Script" path="res://pivot.gd" id="4_qmk0w"]
 [ext_resource type="Script" path="res://Tongue.gd" id="5_xw844"]
+[ext_resource type="PackedScene" uid="uid://btx1r1cvwc4sb" path="res://ui/healthbar/healthbar.tscn" id="7_82pyh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gxtuh"]
 texture = ExtResource("2_gpsi8")
@@ -503,6 +504,12 @@ script = ExtResource("5_xw844")
 [node name="RayCast2D" type="RayCast2D" parent="CharacterBody2D/pivot/Tongue"]
 position = Vector2(-0.651461, -15)
 target_position = Vector2(0, 250)
+
+[node name="Healthbar" parent="CharacterBody2D" instance=ExtResource("7_82pyh")]
+offset_left = -12.0
+offset_top = -42.0
+offset_right = 35.0
+offset_bottom = -36.0
 
 [node name="Walls" type="StaticBody2D" parent="."]
 position = Vector2(41, 26)
