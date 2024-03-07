@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 var projectile = preload("res://Characters/spit_projectile.tscn")
 var projectileSpeed = 20
-const moveSpeed = 20
+var counter = 0
+@export var moveSpeed = 50
 @export var player: Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 	
@@ -38,3 +39,7 @@ func _on_path_timer_timeout():
 # on timer timeout the enemy fires projectiles
 func _on_fire_timer_timeout():
 	fire(projectileSpeed)
+
+
+		
+		

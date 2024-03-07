@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://tfq3pp1u838k"]
+[gd_scene load_steps=22 format=3 uid="uid://tfq3pp1u838k"]
 
 [ext_resource type="Script" path="res://Scenes/main_character.gd" id="1_6hlhd"]
 [ext_resource type="Texture2D" uid="uid://tiy2sp03g01p" path="res://ma-down.PNG" id="2_m6861"]
@@ -128,7 +128,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enc4r"]
 size = Vector2(24.9167, 32.5833)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mks2x"]
+size = Vector2(48.6667, 65.3333)
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["main_character"]]
 position = Vector2(-40, 8)
 scale = Vector2(3, 3)
 script = ExtResource("1_6hlhd")
@@ -152,3 +155,9 @@ rotation = -4.00902
 
 [node name="Marker2D" type="Marker2D" parent="Node2D"]
 position = Vector2(49.4244, 0.0429707)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(13, -1.33333)
+shape = SubResource("RectangleShape2D_mks2x")
