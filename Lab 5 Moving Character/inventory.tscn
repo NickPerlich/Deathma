@@ -1,0 +1,95 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0tvg7515be52"]
+
+[ext_resource type="Script" path="res://inventory.gd" id="1_e020d"]
+
+[node name="Inventory" type="CanvasLayer"]
+script = ExtResource("1_e020d")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slot1" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.1
+anchor_bottom = 1.1
+offset_top = 2.0
+offset_right = 36.0
+offset_bottom = 38.0
+
+[node name="Slot1Image" type="TextureRect" parent="Control/Slot1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+
+[node name="Slot2" type="Button" parent="Control"]
+offset_left = 80.0
+offset_top = 2.0
+offset_right = 160.0
+offset_bottom = 82.0
+
+[node name="Slot2Image" type="TextureRect" parent="Control/Slot2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+
+[node name="Slot3" type="Button" parent="Control"]
+offset_left = 160.0
+offset_top = 2.0
+offset_right = 240.0
+offset_bottom = 82.0
+
+[node name="Slot3Image" type="TextureRect" parent="Control/Slot3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.976
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -0.0400009
+
+[node name="Slot4" type="Button" parent="Control"]
+offset_left = 240.0
+offset_top = 2.0
+offset_right = 320.0
+offset_bottom = 82.0
+
+[node name="Slot4Image" type="TextureRect" parent="Control/Slot4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.976
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -0.0400009
+offset_bottom = -1.0
+
+[node name="Slot5" type="Button" parent="Control"]
+offset_left = 320.0
+offset_top = 2.0
+offset_right = 400.0
+offset_bottom = 82.0
+
+[node name="Slot5Image" type="TextureRect" parent="Control/Slot5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.071
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -14.55
+offset_bottom = -1.0

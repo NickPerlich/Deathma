@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfp0t8kiya1gh"]
+
+[ext_resource type="Script" path="res://banana_bread.gd" id="1_ejem4"]
+[ext_resource type="Texture2D" uid="uid://dm63nkhiwbfri" path="res://Art/banana_bread.png" id="1_tsipx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jhtme"]
+radius = 25.0
+
+[node name="Banana_Bread" type="Area2D"]
+script = ExtResource("1_ejem4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -24)
+scale = Vector2(1.50537, 1.59479)
+texture = ExtResource("1_tsipx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -22)
+shape = SubResource("CircleShape2D_jhtme")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

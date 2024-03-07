@@ -13,6 +13,7 @@ var health = 100 : set = _set_health
 
 func _ready():
 	healthbar.init_health(health)
+	add_to_group("Player")
 	
 
 func _physics_process(delta):

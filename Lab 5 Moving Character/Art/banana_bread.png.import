@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcvemsyqsr2bd"
-path="res://.godot/imported/Interiors_free_48x48.png-ccf73638c71b262f68d22da2d6bb4b34.ctex"
+uid="uid://dm63nkhiwbfri"
+path="res://.godot/imported/banana_bread.png-fed4b208ac02960d4fad82c3e603f4c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Interiors_free_48x48.png"
-dest_files=["res://.godot/imported/Interiors_free_48x48.png-ccf73638c71b262f68d22da2d6bb4b34.ctex"]
+source_file="res://Art/banana_bread.png"
+dest_files=["res://.godot/imported/banana_bread.png-fed4b208ac02960d4fad82c3e603f4c1.ctex"]
 
 [params]
 
