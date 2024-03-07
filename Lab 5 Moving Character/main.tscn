@@ -8248,11 +8248,16 @@ metadata/_edit_use_anchors_ = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="Walls" type="StaticBody2D" parent="."]
+[node name="Walls" type="StaticBody2D" parent="." groups=["collectable"]]
 position = Vector2(41, 26)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-675, -99)
 shape = SubResource("RectangleShape2D_rsl46")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(68, 260)
+scale = Vector2(0.476562, 0.5)
+texture = ExtResource("4_8v5f6")
 
 [connection signal="hooked" from="CharacterBody2D/pivot/Tongue" to="CharacterBody2D" method="_on_tongue_hooked"]

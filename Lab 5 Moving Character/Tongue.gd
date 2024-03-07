@@ -19,7 +19,7 @@ func _input(event):
 		reverse_interpolate()
 
 func reverse_interpolate():
-	interpolate(0,0.75)
+	interpolate(0,0.55)
 	
 func check_collision():
 	await get_tree().create_timer(0.1).timeout
@@ -27,8 +27,9 @@ func check_collision():
 	if ray_cast.is_colliding():
 		collision_point = ray_cast.get_collision_point()
 		distance = (global_position - collision_point).length()
+		var collider = ray_cast.get_collider()
 		hooked.emit(collision_point)
-		print(collision_point)
+		print(collision_point, collider.name)
 	else:
 		distance = 250.0
 	return distance
