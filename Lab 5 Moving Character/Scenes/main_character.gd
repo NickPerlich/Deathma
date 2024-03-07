@@ -96,4 +96,5 @@ func shoot(mouse_position):
 
 
 func _on_tongue_collected(texture, collision):
+	#projectilePath.changeTexture
 	pass # Replace with function body.

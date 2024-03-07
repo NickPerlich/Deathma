@@ -4,6 +4,7 @@ var distance:float = 250
 # Called when the node enters the scene tree for the first time.
 
 signal hooked(hooked_position)
+signal collected(texture, collision)
 
 func interpolate(length, duration = 0.2):
 	var tween_offset = get_tree().create_tween()

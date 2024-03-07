@@ -8866,4 +8866,5 @@ position = Vector2(-397, 99)
 position = Vector2(-218, 294)
 player = NodePath("../player")
 
+[connection signal="collected" from="player/pivot/Tongue" to="player" method="_on_tongue_collected"]
 [connection signal="hooked" from="player/pivot/Tongue" to="player" method="_on_tongue_hooked"]
