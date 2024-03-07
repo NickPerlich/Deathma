@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bldae3kbycf61"]
+[gd_scene load_steps=27 format=3 uid="uid://bldae3kbycf61"]
 
 [ext_resource type="Texture2D" uid="uid://bmpvu5yh55rd5" path="res://Art/lvl1-tiles/Room_Builder_free_32x32.png" id="1_7btcj"]
 [ext_resource type="Texture2D" uid="uid://bdqke3x35qlek" path="res://Terrain (16x16).png" id="2_gpsi8"]
@@ -8197,7 +8197,34 @@ sources/2 = SubResource("TileSetAtlasSource_tyvwd")
 size = Vector2(57, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7qg3"]
-size = Vector2(121, 124)
+size = Vector2(102, 81.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68u08"]
+size = Vector2(143, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pr6e"]
+size = Vector2(55.25, 93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3p0tv"]
+size = Vector2(38, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlww1"]
+size = Vector2(141, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdigj"]
+size = Vector2(144, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xhmw"]
+size = Vector2(56, 77.6875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wd2fn"]
+size = Vector2(65, 87.3438)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm2ia"]
+size = Vector2(58.5, 81.8438)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4giou"]
+size = Vector2(45, 95)
 
 [node name="Node" type="Node"]
 
@@ -8259,98 +8286,211 @@ position = Vector2(41, 26)
 position = Vector2(-675, -99)
 shape = SubResource("RectangleShape2D_rsl46")
 
-[node name="table" type="StaticBody2D" parent="." groups=["collectible"]]
+[node name="collectibles" type="Node2D" parent="."]
+
+[node name="table" type="StaticBody2D" parent="collectibles" groups=["collectible"]]
 position = Vector2(-0.5, -1)
 
-[node name="Sprite2D" type="Sprite2D" parent="table"]
+[node name="Sprite2D" type="Sprite2D" parent="collectibles/table"]
 position = Vector2(0.5, 1)
 texture = ExtResource("9_1kacx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="table" groups=["collectible"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/table" groups=["collectible"]]
 shape = SubResource("RectangleShape2D_x7qg3")
 
-[node name="chair" type="Sprite2D" parent="."]
-position = Vector2(1703, 65)
+[node name="pots4" type="StaticBody2D" parent="collectibles" groups=["collectible"]]
+position = Vector2(-293, -308)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/pots4" groups=["collectible"]]
+position = Vector2(3.5, -6)
+shape = SubResource("RectangleShape2D_68u08")
+
+[node name="pots" type="Sprite2D" parent="collectibles/pots4"]
+position = Vector2(3, 3)
+texture = ExtResource("3_hxtcl")
+region_enabled = true
+region_rect = Rect2(6.59137, 3193.67, 137.216, 80.2329)
+
+[node name="chair2" type="StaticBody2D" parent="collectibles" groups=["collectible"]]
+position = Vector2(-420, -448)
+
+[node name="chair" type="Sprite2D" parent="collectibles/chair2"]
+position = Vector2(-1, 5)
 texture = ExtResource("3_hxtcl")
 region_enabled = true
 region_rect = Rect2(193.214, 1020.96, 49.2992, 97.3179)
 
-[node name="chair" type="Sprite2D" parent="chair"]
-position = Vector2(-178, 506)
-texture = ExtResource("3_hxtcl")
-region_enabled = true
-region_rect = Rect2(193.214, 1020.96, 49.2992, 97.3179)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/chair2" groups=["collectible"]]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_0pr6e")
 
-[node name="chair" type="Sprite2D" parent="chair/chair"]
-position = Vector2(-1957, -1121)
-texture = ExtResource("3_hxtcl")
-region_enabled = true
-region_rect = Rect2(193.214, 1020.96, 49.2992, 97.3179)
+[node name="pots5" type="StaticBody2D" parent="collectibles" groups=["collectible"]]
+position = Vector2(1097, 617)
 
-[node name="lamp" type="Sprite2D" parent="."]
-position = Vector2(1724, 601)
-texture = ExtResource("3_hxtcl")
-region_enabled = true
-region_rect = Rect2(573.743, 2706.92, 49.303, 111.821)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/pots5" groups=["collectible"]]
+position = Vector2(-10, 1.5)
+shape = SubResource("RectangleShape2D_3p0tv")
 
-[node name="lamp" type="Sprite2D" parent="lamp"]
-position = Vector2(-1846, 58)
-texture = ExtResource("3_hxtcl")
-region_enabled = true
-region_rect = Rect2(573.743, 2706.92, 49.303, 111.821)
-
-[node name="lamp" type="Sprite2D" parent="lamp/lamp"]
-position = Vector2(373, -1353)
-texture = ExtResource("3_hxtcl")
-region_enabled = true
-region_rect = Rect2(573.743, 2706.92, 49.303, 111.821)
-
-[node name="lamp" type="Sprite2D" parent="lamp/lamp/lamp"]
-position = Vector2(68, 692)
-texture = ExtResource("3_hxtcl")
-region_enabled = true
-region_rect = Rect2(573.743, 2706.92, 49.303, 111.821)
-
-[node name="globe" type="Sprite2D" parent="."]
-position = Vector2(1109, 612)
+[node name="globe" type="Sprite2D" parent="collectibles/pots5"]
+position = Vector2(-2, 0)
 texture = ExtResource("3_hxtcl")
 region_enabled = true
 region_rect = Rect2(577.497, 3165.64, 57.6426, 73.2219)
 
-[node name="globe" type="Sprite2D" parent="globe"]
-position = Vector2(-807, -75)
+[node name="pots6" type="StaticBody2D" parent="collectibles" groups=["collectible"]]
+position = Vector2(316, 531)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/pots6" groups=["collectible"]]
+position = Vector2(-10, 1.5)
+shape = SubResource("RectangleShape2D_3p0tv")
+
+[node name="globe" type="Sprite2D" parent="collectibles/pots6"]
+position = Vector2(-2, 0)
 texture = ExtResource("3_hxtcl")
 region_enabled = true
 region_rect = Rect2(577.497, 3165.64, 57.6426, 73.2219)
 
-[node name="pots" type="Sprite2D" parent="."]
-position = Vector2(1639, 390)
+[node name="pots3" type="StaticBody2D" parent="collectibles" groups=["collectible"]]
+position = Vector2(1635, 377)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/pots3" groups=["collectible"]]
+position = Vector2(-3.5, -5.5)
+shape = SubResource("RectangleShape2D_mlww1")
+
+[node name="pots" type="Sprite2D" parent="collectibles/pots3"]
+position = Vector2(3, 3)
 texture = ExtResource("3_hxtcl")
 region_enabled = true
 region_rect = Rect2(6.59137, 3193.67, 137.216, 80.2329)
 
-[node name="pots" type="Sprite2D" parent="pots"]
-position = Vector2(-1935, -687)
+[node name="pots2" type="StaticBody2D" parent="collectibles" groups=["collectible"]]
+position = Vector2(-509, 93)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/pots2" groups=["collectible"]]
+position = Vector2(3, -3.5)
+shape = SubResource("RectangleShape2D_wdigj")
+
+[node name="pots" type="Sprite2D" parent="collectibles/pots2"]
+position = Vector2(3, 3)
 texture = ExtResource("3_hxtcl")
 region_enabled = true
 region_rect = Rect2(6.59137, 3193.67, 137.216, 80.2329)
 
-[node name="pots" type="Sprite2D" parent="pots/pots"]
-position = Vector2(-242, 383)
-texture = ExtResource("3_hxtcl")
-region_enabled = true
-region_rect = Rect2(6.59137, 3193.67, 137.216, 80.2329)
+[node name="plant4" type="StaticBody2D" parent="collectibles" groups=["collectible"]]
+position = Vector2(185, -314)
 
-[node name="plant" type="Sprite2D" parent="."]
-position = Vector2(287, -332)
+[node name="plant2" type="Sprite2D" parent="collectibles/plant4"]
+position = Vector2(-1, 3)
 texture = ExtResource("3_hxtcl")
 region_enabled = true
 region_rect = Rect2(636.552, 2106.31, 75.1421, 111.75)
 
-[node name="plant" type="Sprite2D" parent="plant"]
-position = Vector2(792, 408)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/plant4" groups=["collectible"]]
+position = Vector2(-2, -4.84375)
+shape = SubResource("RectangleShape2D_2xhmw")
+
+[node name="plant" type="StaticBody2D" parent="collectibles" groups=["collectible"]]
+position = Vector2(34, -635)
+
+[node name="plant2" type="Sprite2D" parent="collectibles/plant"]
+position = Vector2(-1, 3)
 texture = ExtResource("3_hxtcl")
 region_enabled = true
 region_rect = Rect2(636.552, 2106.31, 75.1421, 111.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/plant" groups=["collectible"]]
+position = Vector2(-4.5, -0.671875)
+shape = SubResource("RectangleShape2D_wd2fn")
+
+[node name="plant3" type="StaticBody2D" parent="collectibles" groups=["collectible"]]
+position = Vector2(1094, 78)
+
+[node name="plant2" type="Sprite2D" parent="collectibles/plant3"]
+position = Vector2(1, -1)
+texture = ExtResource("3_hxtcl")
+region_enabled = true
+region_rect = Rect2(636.552, 2106.31, 75.1421, 111.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/plant3" groups=["collectible"]]
+position = Vector2(1.75, 4.07812)
+shape = SubResource("RectangleShape2D_hm2ia")
+
+[node name="chair5" type="StaticBody2D" parent="collectibles" groups=["collectible"]]
+position = Vector2(1257.46, 353.015)
+
+[node name="chair" type="Sprite2D" parent="collectibles/chair5"]
+position = Vector2(-1, 5)
+texture = ExtResource("3_hxtcl")
+region_enabled = true
+region_rect = Rect2(193.214, 1020.96, 49.2992, 97.3179)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/chair5" groups=["collectible"]]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_0pr6e")
+
+[node name="lamp2" type="StaticBody2D" parent="collectibles" groups=["collectible"]]
+position = Vector2(1608, 173)
+
+[node name="lamp" type="Sprite2D" parent="collectibles/lamp2"]
+position = Vector2(-3, 2)
+texture = ExtResource("3_hxtcl")
+region_enabled = true
+region_rect = Rect2(573.743, 2706.92, 49.303, 111.821)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/lamp2" groups=["collectible"]]
+position = Vector2(-3.5, -1.5)
+shape = SubResource("RectangleShape2D_4giou")
+
+[node name="lamp3" type="StaticBody2D" parent="collectibles" groups=["collectible"]]
+position = Vector2(1364.88, 515.436)
+
+[node name="lamp" type="Sprite2D" parent="collectibles/lamp3"]
+position = Vector2(-3, 2)
+texture = ExtResource("3_hxtcl")
+region_enabled = true
+region_rect = Rect2(573.743, 2706.92, 49.303, 111.821)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/lamp3" groups=["collectible"]]
+position = Vector2(-3.5, -1.5)
+shape = SubResource("RectangleShape2D_4giou")
+
+[node name="lamp6" type="StaticBody2D" parent="collectibles" groups=["collectible"]]
+position = Vector2(-145.219, 573.085)
+
+[node name="lamp" type="Sprite2D" parent="collectibles/lamp6"]
+position = Vector2(-3, 2)
+texture = ExtResource("3_hxtcl")
+region_enabled = true
+region_rect = Rect2(573.743, 2706.92, 49.303, 111.821)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/lamp6" groups=["collectible"]]
+position = Vector2(-3.5, -1.5)
+shape = SubResource("RectangleShape2D_4giou")
+
+[node name="lamp5" type="StaticBody2D" parent="collectibles" groups=["collectible"]]
+position = Vector2(222.678, -691.876)
+
+[node name="lamp" type="Sprite2D" parent="collectibles/lamp5"]
+position = Vector2(-3, 2)
+texture = ExtResource("3_hxtcl")
+region_enabled = true
+region_rect = Rect2(573.743, 2706.92, 49.303, 111.821)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/lamp5" groups=["collectible"]]
+position = Vector2(-3.5, -1.5)
+shape = SubResource("RectangleShape2D_4giou")
+
+[node name="lamp4" type="StaticBody2D" parent="collectibles" groups=["collectible"]]
+position = Vector2(1615.43, 618.74)
+
+[node name="lamp" type="Sprite2D" parent="collectibles/lamp4"]
+position = Vector2(-3, 2)
+texture = ExtResource("3_hxtcl")
+region_enabled = true
+region_rect = Rect2(573.743, 2706.92, 49.303, 111.821)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/lamp4" groups=["collectible"]]
+position = Vector2(-3.5, -1.5)
+shape = SubResource("RectangleShape2D_4giou")
 
 [connection signal="hooked" from="CharacterBody2D/pivot/Tongue" to="CharacterBody2D" method="_on_tongue_hooked"]
