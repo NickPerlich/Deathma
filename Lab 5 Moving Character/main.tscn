@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bldae3kbycf61"]
+[gd_scene load_steps=18 format=3 uid="uid://bldae3kbycf61"]
 
 [ext_resource type="Texture2D" uid="uid://bmpvu5yh55rd5" path="res://Art/lvl1-tiles/Room_Builder_free_32x32.png" id="1_7btcj"]
 [ext_resource type="Texture2D" uid="uid://bdqke3x35qlek" path="res://Terrain (16x16).png" id="2_gpsi8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://pivot.gd" id="4_qmk0w"]
 [ext_resource type="Script" path="res://Tongue.gd" id="5_xw844"]
 [ext_resource type="PackedScene" uid="uid://btx1r1cvwc4sb" path="res://ui/healthbar/healthbar.tscn" id="7_82pyh"]
+[ext_resource type="Texture2D" uid="uid://b3lj7gkged1mg" path="res://icon.svg" id="9_1kacx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r026b"]
 texture = ExtResource("1_7btcj")
@@ -8195,6 +8196,9 @@ sources/2 = SubResource("TileSetAtlasSource_tyvwd")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsl46"]
 size = Vector2(57, 56)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7qg3"]
+size = Vector2(121, 124)
+
 [node name="Node" type="Node"]
 
 [node name="floor" type="TileMap" parent="."]
@@ -8238,10 +8242,10 @@ position = Vector2(3.71597e-05, -21.0001)
 target_position = Vector2(0, 250)
 
 [node name="Healthbar" parent="CharacterBody2D" instance=ExtResource("7_82pyh")]
-offset_left = 33.3333
-offset_top = -94.0
-offset_right = 80.3333
-offset_bottom = -88.0
+offset_left = -5.99999
+offset_top = -42.6667
+offset_right = 41.0
+offset_bottom = -36.6667
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
@@ -8255,9 +8259,14 @@ position = Vector2(41, 26)
 position = Vector2(-675, -99)
 shape = SubResource("RectangleShape2D_rsl46")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(68, 260)
-scale = Vector2(0.476562, 0.5)
-texture = ExtResource("4_8v5f6")
+[node name="table" type="StaticBody2D" parent="." groups=["collectible"]]
+position = Vector2(-0.5, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="table"]
+position = Vector2(0.5, 1)
+texture = ExtResource("9_1kacx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="table" groups=["collectible"]]
+shape = SubResource("RectangleShape2D_x7qg3")
 
 [connection signal="hooked" from="CharacterBody2D/pivot/Tongue" to="CharacterBody2D" method="_on_tongue_hooked"]

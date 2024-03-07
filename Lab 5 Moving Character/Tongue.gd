@@ -25,11 +25,20 @@ func check_collision():
 	await get_tree().create_timer(0.1).timeout
 	var collision_point
 	if ray_cast.is_colliding():
-		collision_point = ray_cast.get_collision_point()
-		distance = (global_position - collision_point).length()
+		
 		var collider = ray_cast.get_collider()
-		hooked.emit(collision_point)
+		
 		print(collision_point, collider.name)
+		#check what it colided with
+		if collider.is_in_group("collectible"):
+			handle_collision_collectible(collider)
+		else:
+			collision_point = ray_cast.get_collision_point()
+			distance = (global_position - collision_point).length()
+			hooked.emit(collision_point)
 	else:
 		distance = 250.0
 	return distance
+	
+func handle_collision_collectible(collider):
+	collider.queue_free()
