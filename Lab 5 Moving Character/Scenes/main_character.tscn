@@ -126,7 +126,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enc4r"]
-size = Vector2(30.3333, 24.3333)
+size = Vector2(24.9167, 32.5833)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(-40, 8)
@@ -135,13 +135,13 @@ script = ExtResource("1_6hlhd")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(12.3333, -3.33332)
-scale = Vector2(1.82813, 1.82813)
+position = Vector2(55.7501, -51.9166)
+scale = Vector2(2.26302, 2.26302)
 sprite_frames = SubResource("SpriteFrames_obbra")
-animation = &"ma-up"
+animation = &"ma-down"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(12.3333, -2)
+position = Vector2(56.9167, -50.75)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_enc4r")
