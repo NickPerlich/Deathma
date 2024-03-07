@@ -93,3 +93,7 @@ func shoot(mouse_position):
 	var direction = (mouse_position - projectile.global_position).normalized()
 	projectile.velocityy = direction
 	
+
+
+func _on_tongue_collected(texture, collision):
+	pass # Replace with function body.

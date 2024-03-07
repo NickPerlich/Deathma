@@ -32,7 +32,7 @@ func check_collision():
 		#check what it colided with
 		if collider.is_in_group("collectible"):
 			handle_collision_collectible(collider)
-			print(getTexture(collider))
+			print(getTexture(collider).name)
 		else:
 			collision_point = ray_cast.get_collision_point()
 			distance = (global_position - collision_point).length()
@@ -47,4 +47,4 @@ func handle_collision_collectible(collider):
 func getTexture(collider):
 	for child in collider.get_children():
 		if child is Sprite2D:
-			return child.name
+			return child

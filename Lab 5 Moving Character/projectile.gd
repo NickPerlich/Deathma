@@ -10,3 +10,11 @@ func _physics_process(delta):
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("main_character"):
 		queue_free()
+
+func changeTexture(texture):
+	$Icon.Texture = texture
+	return 
+
+func changeCollisionShape(collisionShape):
+	$CollisionShape2D.Transform2D.Position
+	return 
