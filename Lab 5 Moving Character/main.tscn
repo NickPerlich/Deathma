@@ -8204,6 +8204,7 @@ layer_0/tile_data = PackedInt32Array(786452, 720897, 11, 851988, 720897, 11, 786
 
 [node name="borders" type="TileMap" parent="."]
 texture_filter = 1
+position = Vector2(2, 1)
 scale = Vector2(1.5, 1.5)
 tile_set = SubResource("TileSet_kk10u")
 format = 2
@@ -8219,22 +8220,21 @@ position = Vector2(495, 421)
 scale = Vector2(1.5, 1.5)
 
 [node name="pivot" type="Node2D" parent="CharacterBody2D"]
-position = Vector2(12, 2.66666)
+position = Vector2(14, 4.66666)
 scale = Vector2(0.666667, 0.666667)
 script = ExtResource("4_qmk0w")
 
 [node name="Tongue" type="Sprite2D" parent="CharacterBody2D/pivot"]
 texture_repeat = 2
-position = Vector2(96, -71)
+position = Vector2(-3.00001, 1.52588e-05)
 rotation = -1.5708
 scale = Vector2(1.14982, 1)
 texture = ExtResource("4_8v5f6")
 region_enabled = true
-region_rect = Rect2(0, 0, 10, 64)
 script = ExtResource("5_xw844")
 
 [node name="RayCast2D" type="RayCast2D" parent="CharacterBody2D/pivot/Tongue"]
-position = Vector2(7.62939e-05, -25)
+position = Vector2(3.71597e-05, -21.0001)
 target_position = Vector2(0, 250)
 
 [node name="Healthbar" parent="CharacterBody2D" instance=ExtResource("7_82pyh")]
