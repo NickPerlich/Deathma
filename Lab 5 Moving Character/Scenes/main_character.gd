@@ -114,7 +114,5 @@ func _on_tongue_collected(texture, collisionShape, rect_region):
 		"rect_region": rect_region
 	}
 	bulletList.append(bullet)
-	curCollisionShape=collisionShape
-	curRect_region=rect_region
-	curTexture=texture
+
 	pass # Replace with function body.
