@@ -70,7 +70,9 @@ func _process(delta):
 	var player_pos = get_global_position()
 	$Node2D.look_at(mouse_pos)
 	if Input.is_action_just_pressed("shoot"):
-		shoot(mouse_pos)
+		if bulletCount:
+			shoot(mouse_pos)
+			bulletCount -=1
 	
 func _set_health(value):
 	#if health <= 0
@@ -90,6 +92,7 @@ func _on_tongue_hooked(hooked_position):
 	velocity = self.get_position() - hooked_position
 
 func shoot(mouse_position):
+	
 	var projectile = projectilePath.instantiate()
 	projectile.changeCollisionShape(curCollisionShape)
 	projectile.changeTexture(curTexture,curRect_region)
@@ -102,13 +105,8 @@ func shoot(mouse_position):
 
 
 func _on_tongue_collected(texture, collisionShape, rect_region):
-	#var p = projectilePath.instantiate()
-	#p.changeTexture(texture, rect_region)
-	#p.changeCollisionShape(collisionShape)
-	#get_parent().add_child(p)
-	#p.position = $Node2D/Marker2D.global_position
-	curCollisionShape=curCollisionShape
+	bulletCount += 1
+	curCollisionShape=collisionShape
 	curRect_region=rect_region
 	curTexture=texture
-	print(texture,collisionShape,rect_region)
 	pass # Replace with function body.
