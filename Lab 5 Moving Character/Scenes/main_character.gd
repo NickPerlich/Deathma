@@ -6,6 +6,10 @@ const JUMP_VELOCITY = -400.0
 @onready var sprite_2d = $Sprite2D
 @onready var healthbar = $Healthbar
 var bulletCount = 0
+var curTexture = 0
+var curCollisionShape = 0
+var curRect_region = 0
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -87,6 +91,8 @@ func _on_tongue_hooked(hooked_position):
 
 func shoot(mouse_position):
 	var projectile = projectilePath.instantiate()
+	projectile.changeCollisionShape(curCollisionShape)
+	projectile.changeTexture(curTexture,curRect_region)
 	get_parent().add_child(projectile)
 	
 	projectile.position = $Node2D/Marker2D.global_position
@@ -95,6 +101,14 @@ func shoot(mouse_position):
 	
 
 
-func _on_tongue_collected(texture, collision):
-	#projectilePath.changeTexture
+func _on_tongue_collected(texture, collisionShape, rect_region):
+	#var p = projectilePath.instantiate()
+	#p.changeTexture(texture, rect_region)
+	#p.changeCollisionShape(collisionShape)
+	#get_parent().add_child(p)
+	#p.position = $Node2D/Marker2D.global_position
+	curCollisionShape=curCollisionShape
+	curRect_region=rect_region
+	curTexture=texture
+	print(texture,collisionShape,rect_region)
 	pass # Replace with function body.

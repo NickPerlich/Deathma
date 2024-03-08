@@ -8850,6 +8850,9 @@ region_rect = Rect2(573.743, 2706.92, 49.303, 111.821)
 position = Vector2(-3.5, -1.5)
 shape = SubResource("RectangleShape2D_4giou")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-148.219, 575.085)
+
 [node name="Banana_Bread" parent="." instance=ExtResource("10_svgc6")]
 position = Vector2(259, 480)
 
