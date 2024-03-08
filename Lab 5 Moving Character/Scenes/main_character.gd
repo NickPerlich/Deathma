@@ -9,6 +9,7 @@ var bulletCount = 0
 var curTexture = 0
 var curCollisionShape = 0
 var curRect_region = 0
+var bulletList = []
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -70,7 +71,7 @@ func _process(delta):
 	var player_pos = get_global_position()
 	$Node2D.look_at(mouse_pos)
 	if Input.is_action_just_pressed("shoot"):
-		if bulletCount:
+		if bulletList.size():
 			shoot(mouse_pos)
 			bulletCount -=1
 	
@@ -93,9 +94,10 @@ func _on_tongue_hooked(hooked_position):
 
 func shoot(mouse_position):
 	
+	var bullet = bulletList.pop_back()
 	var projectile = projectilePath.instantiate()
-	projectile.changeCollisionShape(curCollisionShape)
-	projectile.changeTexture(curTexture,curRect_region)
+	projectile.changeCollisionShape(bullet.collisionShape)
+	projectile.changeTexture(bullet.texture,bullet.rect_region)
 	get_parent().add_child(projectile)
 	
 	projectile.position = $Node2D/Marker2D.global_position
@@ -106,6 +108,12 @@ func shoot(mouse_position):
 
 func _on_tongue_collected(texture, collisionShape, rect_region):
 	bulletCount += 1
+	var bullet = {
+		"collisionShape": collisionShape,
+		"texture": texture,
+		"rect_region": rect_region
+	}
+	bulletList.append(bullet)
 	curCollisionShape=collisionShape
 	curRect_region=rect_region
 	curTexture=texture
