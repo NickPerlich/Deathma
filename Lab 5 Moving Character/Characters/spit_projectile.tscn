@@ -7,6 +7,7 @@
 radius = 5.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+texture_filter = 1
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_j20yk")
@@ -14,7 +15,7 @@ script = ExtResource("1_j20yk")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_l1h2a")
 
-[node name="Area2D" type="Area2D" parent="." groups=["projectile"]]
+[node name="Area2D" type="Area2D" parent="." groups=["enemy_projectile"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_5o63j")

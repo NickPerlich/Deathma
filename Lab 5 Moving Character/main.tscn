@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://tfq3pp1u838k" path="res://Scenes/main_character.tscn" id="3_jtcbk"]
 [ext_resource type="Texture2D" uid="uid://dsnt3x7aoy3wq" path="res://index.icon.png" id="4_8v5f6"]
 [ext_resource type="Script" path="res://pivot.gd" id="4_qmk0w"]
-[ext_resource type="PackedScene" path="res://inventory.tscn" id="5_ohhde"]
+[ext_resource type="PackedScene" uid="uid://b0tvg7515be52" path="res://inventory.tscn" id="5_ohhde"]
 [ext_resource type="Script" path="res://Tongue.gd" id="5_xw844"]
 [ext_resource type="PackedScene" uid="uid://btx1r1cvwc4sb" path="res://ui/healthbar/healthbar.tscn" id="7_82pyh"]
 [ext_resource type="Texture2D" uid="uid://b3lj7gkged1mg" path="res://icon.svg" id="9_1kacx"]

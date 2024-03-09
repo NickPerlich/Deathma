@@ -116,3 +116,7 @@ func _on_tongue_collected(texture, collisionShape, rect_region):
 	bulletList.append(bullet)
 
 	pass # Replace with function body.
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("enemy_projectile"):
+		print("player damaged")
