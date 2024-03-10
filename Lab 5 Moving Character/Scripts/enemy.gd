@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var projectile = preload("res://Characters/spit_projectile.tscn")
-var projectileSpeed = 20
+var projectileSpeed = 100
 var counter = 0
 @export var moveSpeed = 50
 @export var player: Node2D
@@ -18,12 +18,11 @@ func update_path() -> void:
 	nav_agent.target_position = player.global_position
 
 # instantiates a projectile and initializes its speed and size
-func inst(speed):
+func inst(projectileVelocity: Vector2):
 	var projectileInstance = projectile.instantiate()
 	add_child(projectileInstance)
 	projectileInstance.scale *= .4
-	projectileInstance.horizontalVelocity = speed.x
-	projectileInstance.verticalVelocity = speed.y
+	projectileInstance.velocity = projectileVelocity
 	
 # fires projectiles in a pattern specific to this enemy
 func fire(speed):
@@ -38,8 +37,4 @@ func _on_path_timer_timeout():
 
 # on timer timeout the enemy fires projectiles
 func _on_fire_timer_timeout():
-	fire(projectileSpeed)
-
-
-		
-		
+	fire(projectileSpeed)		

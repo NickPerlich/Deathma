@@ -8866,7 +8866,7 @@ position = Vector2(949, 550)
 position = Vector2(-397, 99)
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("12_igiyr")]
-position = Vector2(-218, 294)
+position = Vector2(28, 297)
 player = NodePath("../player")
 
 [connection signal="collected" from="player/pivot/Tongue" to="player" method="_on_tongue_collected"]
