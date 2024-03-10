@@ -131,7 +131,7 @@ size = Vector2(24.9167, 32.5833)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mks2x"]
 size = Vector2(48.6667, 65.3333)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 position = Vector2(-40, 8)
 scale = Vector2(3, 3)
 collision_layer = 2

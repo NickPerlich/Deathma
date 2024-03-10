@@ -4,8 +4,6 @@ extends CharacterBody2D
 @export var horizontalVelocity: float
 
 func _physics_process(delta):
-	#position.x += delta  * horizontalVelocity
-	#position.y += delta * verticalVelocity
 	var collision = move_and_collide(velocity * delta)
 	if (collision):
 		queue_free()
