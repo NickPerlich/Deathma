@@ -6,24 +6,24 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_5o63j"]
 radius = 5.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_adkke"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_7oig1"]
 radius = 5.0
 
-[node name="Spit Projectile" type="CharacterBody2D"]
+[node name="CharacterBody2D2" type="CharacterBody2D" groups=["enemyProjectile"]]
 texture_filter = 1
 collision_layer = 8
 collision_mask = 3
 script = ExtResource("1_j20yk")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["enemyProjectile"]]
 texture = ExtResource("1_l1h2a")
 
 [node name="Area2D" type="Area2D" parent="." groups=["enemy_projectile"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["enemyProjectile"]]
 shape = SubResource("CircleShape2D_5o63j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_adkke")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemyProjectile"]]
+shape = SubResource("CircleShape2D_7oig1")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

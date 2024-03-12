@@ -34,6 +34,9 @@ func check_collision():
 		if collider.is_in_group("collectible"):
 			handle_collision_collectible(collider)
 			collected.emit(getSprite(collider).texture, getCollisionShape(collider).position, getSprite(collider).region_rect)
+		if collider.is_in_group("enemyProjectile"):
+			collider.queue_free()
+			print("hit")
 		else:
 			collision_point = ray_cast.get_collision_point()
 			distance = (global_position - collision_point).length()
