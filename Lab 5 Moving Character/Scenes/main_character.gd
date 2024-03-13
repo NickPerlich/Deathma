@@ -21,11 +21,9 @@ func _ready():
 	healthbar.init_health(health)
 	add_to_group("Player")
 	
-
 func _physics_process(delta):
 	
-	# Add the gravity.
-	
+	# Add the gravity
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -44,11 +42,7 @@ func _physics_process(delta):
 	#collision logic
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		
-
-
 	
-	#need to remove health bar from here, for testing
 	# movement
 	if Input.is_action_pressed("input_left"):
 		sprite_2d.animation = "ma-left"
@@ -66,19 +60,18 @@ func _process(delta):
 	var player_pos = get_global_position()
 	$Node2D.look_at(mouse_pos)
 	if Input.is_action_just_pressed("shoot"):
-		
 		if bulletList.size():
 			shoot(mouse_pos)
 			inventory.use_first_available_item()
 			bulletCount -=1
+	if healthbar.health <= 0:
+		await get_tree().create_timer(1.0).timeout
+		get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
 	
 func _set_health(value):
 	#if health <= 0
 		#die
 	healthbar.health = health
-
-
-
 
 func _on_tongue_hooked(hooked_position):
 	await get_tree().create_timer(0.2).timeout
@@ -117,6 +110,6 @@ func _on_tongue_collected(texture, collisionShape, rect_region):
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("enemy_projectile"):
 		if health > 0:
-			healthbar.decrease_health(10)
+			healthbar.decrease_health(20)
 			$hurtSound.play()
 		print("player damaged")

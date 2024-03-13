@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://bldae3kbycf61"]
+[gd_scene load_steps=61 format=3 uid="uid://bldae3kbycf61"]
 
 [ext_resource type="Texture2D" uid="uid://bmpvu5yh55rd5" path="res://Art/lvl1-tiles/Room_Builder_free_32x32.png" id="1_7btcj"]
 [ext_resource type="Texture2D" uid="uid://bdqke3x35qlek" path="res://Terrain (16x16).png" id="2_gpsi8"]
@@ -9,12 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://b0tvg7515be52" path="res://inventory.tscn" id="5_ohhde"]
 [ext_resource type="Script" path="res://Tongue.gd" id="5_xw844"]
 [ext_resource type="PackedScene" uid="uid://btx1r1cvwc4sb" path="res://ui/healthbar/healthbar.tscn" id="7_82pyh"]
-[ext_resource type="AudioStream" uid="uid://cy0s8fososke" path="res://sounds/SlurpLick - Sound Effect for editing.mp3" id="8_wsds6"]
 [ext_resource type="Texture2D" uid="uid://b3lj7gkged1mg" path="res://icon.svg" id="9_1kacx"]
 [ext_resource type="PackedScene" uid="uid://dfp0t8kiya1gh" path="res://banana_bread.tscn" id="10_svgc6"]
-[ext_resource type="Texture2D" uid="uid://bt37vhnyui7xe" path="res://Interiors_free_48x48.png" id="11_4igl5"]
+[ext_resource type="Texture2D" uid="uid://dcvemsyqsr2bd" path="res://Interiors_free_48x48.png" id="11_4igl5"]
 [ext_resource type="PackedScene" uid="uid://cn1lfdrwpfhnr" path="res://Characters/enemy.tscn" id="12_igiyr"]
-[ext_resource type="AudioStream" uid="uid://ef8hryncnv1v" path="res://sounds/nostalgic playlist for daydreaming.mp3" id="15_cmfiq"]
+[ext_resource type="AudioStream" uid="uid://cy0s8fososke" path="res://sounds/SlurpLick - Sound Effect for editing.mp3" id="14_b7w6i"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yupgo"]
 vertices = PackedVector2Array(49, 32, -48, 32, -49, -31, 48, -32)
@@ -8626,7 +8625,7 @@ script = ExtResource("5_xw844")
 position = Vector2(372.234, -512.998)
 rotation = 1.5708
 scale = Vector2(1, 0.869701)
-stream = ExtResource("8_wsds6")
+stream = ExtResource("14_b7w6i")
 
 [node name="RayCast2D" type="RayCast2D" parent="player/pivot/Tongue"]
 position = Vector2(3.71597e-05, -21.0001)
@@ -8877,10 +8876,6 @@ position = Vector2(-397, 99)
 [node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("12_igiyr")]
 position = Vector2(28, 297)
 player = NodePath("../player")
-
-[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("15_cmfiq")
-autoplay = true
 
 [connection signal="collected" from="player/pivot/Tongue" to="player" method="_on_tongue_collected"]
 [connection signal="hooked" from="player/pivot/Tongue" to="player" method="_on_tongue_hooked"]

@@ -6,25 +6,6 @@ var slots = [null, null, null, null, null]
 func _ready():
 	slots = Global.get_inventory()
 	update_inventory_UI()
-	
-func _input(event):
-		if event.is_action_pressed("Slot_1"):
-			use_item(0)
-			print("item 1 is used")
-		elif event.is_action_pressed("Slot_2"):
-			use_item(1)
-			print("item 2 is used")
-		elif event.is_action_pressed("Slot_3"):
-			use_item(2)
-			print("item 3 is used")	
-		elif event.is_action_pressed("Slot_4"):
-			use_item(3)
-			print("item 4 is used")
-		elif event.is_action_pressed("Slot_5"):
-			use_item(4)
-			print("item 5 is used")
-			
-
 
 func use_item(slot_index):
 	if slots[slot_index]:
