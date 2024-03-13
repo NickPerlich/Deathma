@@ -1,6 +1,6 @@
 extends Sprite2D
 @onready var ray_cast=$RayCast2D
-var distance:float = 250
+var distance:float = 450
 # Called when the node enters the scene tree for the first time.
 
 signal hooked(hooked_position)
@@ -43,7 +43,7 @@ func check_collision():
 			distance = (global_position - collision_point).length()
 			hooked.emit(collision_point)
 	else:
-		distance = 250.0
+		distance = 450.0
 	return distance
 	
 func handle_collision_collectible(collider):

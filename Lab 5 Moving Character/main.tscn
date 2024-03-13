@@ -8630,7 +8630,7 @@ stream = ExtResource("8_wsds6")
 
 [node name="RayCast2D" type="RayCast2D" parent="player/pivot/Tongue"]
 position = Vector2(3.71597e-05, -21.0001)
-target_position = Vector2(0, 250)
+target_position = Vector2(0, 450)
 
 [node name="Healthbar" parent="player" instance=ExtResource("7_82pyh")]
 offset_left = -5.99999
