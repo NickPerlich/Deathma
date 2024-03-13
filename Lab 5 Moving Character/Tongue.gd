@@ -15,6 +15,7 @@ func interpolate(length, duration = 0.2):
 
 func _input(event):
 	if event.is_action_pressed("left_click"):
+		$slurpSound.play()
 		interpolate(await check_collision(), 0.2)
 		await get_tree().create_timer(0.2).timeout
 		reverse_interpolate()

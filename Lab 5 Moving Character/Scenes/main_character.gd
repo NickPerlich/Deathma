@@ -66,6 +66,7 @@ func _process(delta):
 	var player_pos = get_global_position()
 	$Node2D.look_at(mouse_pos)
 	if Input.is_action_just_pressed("shoot"):
+		
 		if bulletList.size():
 			shoot(mouse_pos)
 			inventory.use_first_available_item()
@@ -89,7 +90,7 @@ func _on_tongue_hooked(hooked_position):
 	velocity = self.get_position() - hooked_position
 
 func shoot(mouse_position):
-	
+	$shootSound.play()
 	var bullet = bulletList.pop_back()
 	var projectile = projectilePath.instantiate()
 	projectile.changeCollisionShape(bullet.collisionShape)
@@ -117,4 +118,5 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group("enemy_projectile"):
 		if health > 0:
 			healthbar.decrease_health(10)
+			$hurtSound.play()
 		print("player damaged")
