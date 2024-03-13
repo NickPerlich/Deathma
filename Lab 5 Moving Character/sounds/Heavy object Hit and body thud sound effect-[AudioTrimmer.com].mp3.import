@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bhda06cik71io"
+path="res://.godot/imported/Heavy object Hit and body thud sound effect-[AudioTrimmer.com].mp3-98d04b491b73b14b24d98580204d5819.mp3str"
+
+[deps]
+
+source_file="res://sounds/Heavy object Hit and body thud sound effect-[AudioTrimmer.com].mp3"
+dest_files=["res://.godot/imported/Heavy object Hit and body thud sound effect-[AudioTrimmer.com].mp3-98d04b491b73b14b24d98580204d5819.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
