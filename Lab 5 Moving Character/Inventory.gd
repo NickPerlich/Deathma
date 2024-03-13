@@ -34,7 +34,7 @@ func use_item(slot_index):
 		update_inventory_UI()
 		
 func use_first_available_item():
-	for i in range(slots.size()):
+	for i in range(slots.size() - 1, -1, -1):
 		if slots[i] != null:
 			use_item(i)
 			break
