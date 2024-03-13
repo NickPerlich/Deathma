@@ -46,6 +46,17 @@ func check_collision():
 	return distance
 	
 func handle_collision_collectible(collider):
+	var cloned_item = getSprite(collider).duplicate()  # Clone the current item
+	cloned_item.texture = getSprite(collider).texture
+	cloned_item.region_rect = getSprite(collider).region_rect
+	cloned_item.region_enabled = true
+	Global.add_item_to_inventory(cloned_item)  # Add the cloned item to the global inventory
+	var inventory_node = $"../../Inventory"
+	if inventory_node:
+		inventory_node.update_inventory_UI()
+	else:
+		print("Failed to find inventory node")
+	#queue_free()  # Remove the original item from the game world
 	collider.queue_free()
 
 func getSprite(collider):

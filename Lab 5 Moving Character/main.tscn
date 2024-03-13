@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://bldae3kbycf61"]
+[gd_scene load_steps=60 format=3 uid="uid://bldae3kbycf61"]
 
 [ext_resource type="Texture2D" uid="uid://bmpvu5yh55rd5" path="res://Art/lvl1-tiles/Room_Builder_free_32x32.png" id="1_7btcj"]
 [ext_resource type="Texture2D" uid="uid://bdqke3x35qlek" path="res://Terrain (16x16).png" id="2_gpsi8"]
@@ -6,11 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://tfq3pp1u838k" path="res://Scenes/main_character.tscn" id="3_jtcbk"]
 [ext_resource type="Texture2D" uid="uid://dsnt3x7aoy3wq" path="res://index.icon.png" id="4_8v5f6"]
 [ext_resource type="Script" path="res://pivot.gd" id="4_qmk0w"]
-[ext_resource type="PackedScene" path="res://inventory.tscn" id="5_ohhde"]
+[ext_resource type="PackedScene" uid="uid://b0tvg7515be52" path="res://inventory.tscn" id="5_ohhde"]
 [ext_resource type="Script" path="res://Tongue.gd" id="5_xw844"]
 [ext_resource type="PackedScene" uid="uid://btx1r1cvwc4sb" path="res://ui/healthbar/healthbar.tscn" id="7_82pyh"]
 [ext_resource type="Texture2D" uid="uid://b3lj7gkged1mg" path="res://icon.svg" id="9_1kacx"]
 [ext_resource type="PackedScene" uid="uid://dfp0t8kiya1gh" path="res://banana_bread.tscn" id="10_svgc6"]
+[ext_resource type="Texture2D" uid="uid://dcvemsyqsr2bd" path="res://Interiors_free_48x48.png" id="11_4igl5"]
 [ext_resource type="PackedScene" uid="uid://cn1lfdrwpfhnr" path="res://Characters/enemy.tscn" id="12_igiyr"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yupgo"]
@@ -8692,7 +8693,7 @@ shape = SubResource("RectangleShape2D_3p0tv")
 position = Vector2(-2, 0)
 texture = ExtResource("3_hxtcl")
 region_enabled = true
-region_rect = Rect2(577.497, 3165.64, 57.6426, 73.2219)
+region_rect = Rect2(621.2, 1732.84, 54, 74)
 
 [node name="pots6" type="StaticBody2D" parent="collectibles" groups=["collectible"]]
 position = Vector2(316, 531)
@@ -8716,7 +8717,7 @@ shape = SubResource("RectangleShape2D_mlww1")
 
 [node name="pots" type="Sprite2D" parent="collectibles/pots3"]
 position = Vector2(3, 3)
-texture = ExtResource("3_hxtcl")
+texture = ExtResource("11_4igl5")
 region_enabled = true
 region_rect = Rect2(6.59137, 3193.67, 137.216, 80.2329)
 

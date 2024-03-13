@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmjh1we0uccn0"]
+
+[ext_resource type="Texture2D" uid="uid://7d0peql5v6db" path="res://Art/obstacle.png" id="1_rr5bm"]
+[ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_sxpng"]
+[ext_resource type="FontFile" uid="uid://db17q61ni7fri" path="res://Art/MetalMania-Regular.ttf" id="2_lkslf"]
+[ext_resource type="Texture2D" uid="uid://v0xc14h81lw3" path="res://Art/Nate Idle 1.png" id="4_50qtu"]
+[ext_resource type="Texture2D" uid="uid://tiy2sp03g01p" path="res://ma-down.PNG" id="5_pbn23"]
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sxpng")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rr5bm")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_lkslf")
+theme_override_font_sizes/font_size = 80
+text = "DEATHMA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Seperator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Start_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lkslf")
+theme_override_font_sizes/font_size = 24
+text = "START"
+
+[node name="Controls_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lkslf")
+theme_override_font_sizes/font_size = 24
+text = "CONTROLS"
+
+[node name="Exit_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lkslf")
+theme_override_font_sizes/font_size = 24
+text = "EXIT"
+
+[node name="NateIdle1" type="Sprite2D" parent="."]
+position = Vector2(779, 115)
+scale = Vector2(5.9375, 5.9375)
+texture = ExtResource("4_50qtu")
+
+[node name="Ma-down" type="Sprite2D" parent="."]
+position = Vector2(576, 589)
+scale = Vector2(4.07812, 4.07812)
+texture = ExtResource("5_pbn23")

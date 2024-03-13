@@ -5,6 +5,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var sprite_2d = $Sprite2D
 @onready var healthbar = $Healthbar
+@onready var inventory = $Inventory
 var bulletCount = 0
 var curTexture = 0
 var curCollisionShape = 0
@@ -50,16 +51,10 @@ func _physics_process(delta):
 	#need to remove health bar from here, for testing
 	# movement
 	if Input.is_action_pressed("input_left"):
-		if health > 0:
-			healthbar.decrease_health(1)
 		sprite_2d.animation = "ma-left"
 	elif Input.is_action_pressed("input_right"):
-		if health > 0:
-			healthbar.decrease_health(1)
 		sprite_2d.animation = "ma-right"
 	elif Input.is_action_pressed("input_up"):
-		if health > 0:
-			healthbar.decrease_health(1)
 		sprite_2d.animation = "ma-up"
 	elif Input.is_action_pressed("input_down"):
 		sprite_2d.animation = "ma-down"
@@ -73,6 +68,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("shoot"):
 		if bulletList.size():
 			shoot(mouse_pos)
+			inventory.use_first_available_item()
 			bulletCount -=1
 	
 func _set_health(value):
@@ -119,4 +115,6 @@ func _on_tongue_collected(texture, collisionShape, rect_region):
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("enemy_projectile"):
+		if health > 0:
+			healthbar.decrease_health(10)
 		print("player damaged")
