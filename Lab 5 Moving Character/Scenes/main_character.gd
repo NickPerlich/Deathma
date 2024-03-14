@@ -68,6 +68,10 @@ func _process(delta):
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
 	
+	print(mouse_pos)
+	#await get_tree().create_timer(1.0).timeout
+		#get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
+		#
 func _set_health(value):
 	#if health <= 0
 		#die
