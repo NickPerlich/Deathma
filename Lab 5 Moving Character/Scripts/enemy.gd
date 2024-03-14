@@ -3,9 +3,10 @@ extends CharacterBody2D
 var projectile = preload("res://Characters/spit_projectile.tscn")
 var projectileSpeed = 100
 var counter = 0
-@export var moveSpeed = 50
+@export var moveSpeed = 80
 @export var player: Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
+var health = 2
 	
 # moves the enemy in a direction that is updated by the navigation agent
 func _physics_process(_delta: float) -> void:
@@ -38,3 +39,10 @@ func _on_path_timer_timeout():
 # on timer timeout the enemy fires projectiles
 func _on_fire_timer_timeout():
 	fire(projectileSpeed)		
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("player_projectile"):
+		if health == 0:
+			queue_free()
+		else:
+			health -= 1

@@ -8,6 +8,3 @@ func _physics_process(delta):
 	if (collision):
 		queue_free()
 
-func _on_area_2d_area_entered(area):
-	if area.is_in_group("player"):
-		print("player hit")

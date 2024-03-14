@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6xeh"]
 radius = 8.0
 
-[node name="CharacterBody2D2" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D"]
 texture_filter = 1
 scale = Vector2(5, 5)
 collision_layer = 4
@@ -16,13 +16,13 @@ collision_mask = 3
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_4vy6n")
-moveSpeed = 70
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_i02hj")
 
 [node name="FireTimer" type="Timer" parent="."]
 process_callback = 0
+wait_time = 2.0
 autostart = true
 
 [node name="Area2D" type="Area2D" parent="." groups=["enemy"]]

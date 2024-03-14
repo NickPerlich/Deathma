@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var collisionShape=$CollisionShape2D
+@onready var areaCollisionShape=$Area2D/CollisionShape2D
 var velocityy = Vector2(1,0)
 var speed =600
 
@@ -11,10 +12,6 @@ func _physics_process(delta):
 
 func _process(delta):
 	rotate(5*delta)
-	
-func _on_area_2d_area_entered(area):
-	if area.is_in_group("main_character"):
-		queue_free()
 
 func changeTexture(texture, region_rect):
 	$Icon.set_texture(texture)
@@ -25,6 +22,7 @@ func changeTexture(texture, region_rect):
 
 func changeCollisionShape(collisionShape):
 	$CollisionShape2D.position = collisionShape
+	$Area2D/CollisionShape2D.position = collisionShape
 	
 	print("shape changed to", $CollisionShape2D.position)
 	return 
