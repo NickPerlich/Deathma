@@ -128,10 +128,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enc4r"]
-size = Vector2(24.9167, 32.5833)
+size = Vector2(24.9167, 29.6667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mks2x"]
-size = Vector2(48.6667, 65.3333)
+size = Vector2(48.6667, 59.3333)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(-40, 8)
@@ -142,8 +142,8 @@ script = ExtResource("1_6hlhd")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(12.3333, -0.333336)
-scale = Vector2(2.26302, 2.26302)
+position = Vector2(12, -2.33333)
+scale = Vector2(2.04297, 2.04297)
 sprite_frames = SubResource("SpriteFrames_obbra")
 animation = &"ma-down"
 autoplay = "default"
