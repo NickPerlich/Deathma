@@ -28,4 +28,6 @@ func handleCollision(collision_info):
 	if collision_info.get_collider().is_in_group("enemy"):
 		collision_info.get_collider().get_damaged()
 	$breakSound.play()
+	await get_tree().create_timer(1).timeout
+	
 	self.queue_free()
