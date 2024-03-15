@@ -42,9 +42,8 @@ func _on_path_timer_timeout():
 func _on_fire_timer_timeout():
 	fire(projectileSpeed)		
 
-func _on_area_2d_area_entered(area):
-	if area.is_in_group("player_projectile"):
-		if health == 0:
-			queue_free()
-		else:
-			health -= 1
+func get_damaged():
+	if health == 0:
+		queue_free()
+	else:
+		health -= 1

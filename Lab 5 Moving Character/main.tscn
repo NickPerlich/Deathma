@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Tongue.gd" id="5_xw844"]
 [ext_resource type="PackedScene" uid="uid://btx1r1cvwc4sb" path="res://ui/healthbar/healthbar.tscn" id="7_82pyh"]
 [ext_resource type="PackedScene" uid="uid://dfp0t8kiya1gh" path="res://banana_bread.tscn" id="10_svgc6"]
-[ext_resource type="Texture2D" uid="uid://bt37vhnyui7xe" path="res://Interiors_free_48x48.png" id="11_4igl5"]
+[ext_resource type="Texture2D" uid="uid://dcvemsyqsr2bd" path="res://Interiors_free_48x48.png" id="11_4igl5"]
 [ext_resource type="PackedScene" uid="uid://cn1lfdrwpfhnr" path="res://Characters/enemy.tscn" id="12_igiyr"]
 [ext_resource type="AudioStream" uid="uid://cy0s8fososke" path="res://sounds/SlurpLick - Sound Effect for editing.mp3" id="14_b7w6i"]
 

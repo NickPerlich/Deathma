@@ -22,12 +22,10 @@ func changeTexture(texture, region_rect):
 
 func changeCollisionShape(collisionShape):
 	$CollisionShape2D.position = collisionShape
-	#$Area2D/CollisionShape2D.position = collisionShape
-	
-
 	return 
 
 func handleCollision(collision_info):
-	#break obj
+	if collision_info.get_collider().is_in_group("enemy"):
+		collision_info.get_collider().get_damaged()
 	$breakSound.play()
 	self.queue_free()
