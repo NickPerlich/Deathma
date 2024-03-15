@@ -36,7 +36,6 @@ func fire(speed):
 # on timer timeout the enemy updates the direction of its path toward the player
 func _on_path_timer_timeout():
 	update_path()
-	print(health)
 
 # on timer timeout the enemy fires projectiles
 func _on_fire_timer_timeout():
