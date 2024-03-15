@@ -22,9 +22,9 @@ func changeTexture(texture, region_rect):
 
 func changeCollisionShape(collisionShape):
 	$CollisionShape2D.position = collisionShape
-	$Area2D/CollisionShape2D.position = collisionShape
+	#$Area2D/CollisionShape2D.position = collisionShape
 	
-	print("shape changed to", $CollisionShape2D.position)
+
 	return 
 
 func handleCollision(collision_info):

@@ -68,7 +68,7 @@ func _process(delta):
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
 	
-	print(mouse_pos)
+
 	#await get_tree().create_timer(1.0).timeout
 		#get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
 		#
@@ -80,10 +80,10 @@ func _set_health(value):
 func _on_tongue_hooked(hooked_position):
 	await get_tree().create_timer(0.2).timeout
 	var tween = get_tree().create_tween()
-	print(self.get_position(), hooked_position)
+
 	
 	tween.tween_property(self, "position",Vector2(hooked_position), .5)
-	print(self.get_position(), hooked_position)
+
 	velocity = self.get_position() - hooked_position
 
 func shoot(mouse_position):

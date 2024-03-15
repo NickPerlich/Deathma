@@ -30,7 +30,7 @@ func check_collision():
 		
 		var collider = ray_cast.get_collider()
 		
-		print(collision_point, collider.name)
+
 		#check what it colided with
 		if collider.is_in_group("collectible"):
 			handle_collision_collectible(collider)
