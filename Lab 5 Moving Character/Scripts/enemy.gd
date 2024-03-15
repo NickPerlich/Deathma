@@ -6,12 +6,15 @@ var counter = 0
 @export var moveSpeed = 80
 @export var player: Node2D
 @onready var nav_agent = $NavigationAgent2D
+@onready var sprite_2d = $Sprite2D
+
 var health = 2
-	
+
 # moves the enemy in a direction that is updated by the navigation agent
 func _physics_process(_delta: float) -> void:
 	var direction = to_local(nav_agent.get_next_path_position()).normalized()
 	velocity = direction * moveSpeed
+	sprite_2d.play("enemy-l")
 	move_and_slide()
 	
 # updates the target position of the navigation agent

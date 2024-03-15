@@ -11,6 +11,7 @@ var curTexture = 0
 var curCollisionShape = 0
 var curRect_region = 0
 var bulletList = []
+var level2 = false
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -67,7 +68,9 @@ func _process(delta):
 	if healthbar.health <= 0:
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
-	
+	if level2 == true:
+		get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
+		
 
 	#await get_tree().create_timer(1.0).timeout
 		#get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
@@ -117,3 +120,6 @@ func _on_area_2d_area_entered(area):
 			healthbar.decrease_health(20)
 			$hurtSound.play()
 		print("player damaged")
+		
+	if area.is_in_group("portal"):
+		level2 = true
