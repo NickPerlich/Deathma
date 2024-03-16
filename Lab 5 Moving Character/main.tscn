@@ -10579,7 +10579,7 @@ script = ExtResource("4_qmk0w")
 
 [node name="Tongue" type="Sprite2D" parent="player/pivot"]
 texture_repeat = 2
-position = Vector2(-3.00001, 1.52588e-05)
+position = Vector2(32, -3.00001)
 rotation = -1.5708
 scale = Vector2(1.14982, 1)
 texture = ExtResource("4_8v5f6")

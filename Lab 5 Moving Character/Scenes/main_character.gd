@@ -113,7 +113,7 @@ func _on_tongue_hooked(hooked_position):
 	var tween = get_tree().create_tween()
 
 	
-	tween.tween_property(self, "position",Vector2(hooked_position), .5)
+	tween.tween_property(self, "position",Vector2(hooked_position)-$pivot.position, .5)
 
 	velocity = self.get_position() - hooked_position
 
