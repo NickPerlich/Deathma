@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b3lj7gkged1mg" path="res://icon.svg" id="1_8a2ju"]
 [ext_resource type="Script" path="res://projectile.gd" id="1_gwxm0"]
-[ext_resource type="AudioStream" uid="uid://bhda06cik71io" path="res://sounds/Heavy object Hit and body thud sound effect-[AudioTrimmer.com].mp3" id="3_pjfkr"]
+[ext_resource type="AudioStream" uid="uid://6x210hcx7kix" path="res://sounds/Ouch - Sound Effect-[AudioTrimmer.com].mp3" id="3_to7fa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcoo2"]
 size = Vector2(53, 89)
@@ -19,4 +19,4 @@ shape = SubResource("RectangleShape2D_qcoo2")
 texture = ExtResource("1_8a2ju")
 
 [node name="breakSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_pjfkr")
+stream = ExtResource("3_to7fa")

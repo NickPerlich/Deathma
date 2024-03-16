@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @onready var collisionShape=$CollisionShape2D
 @onready var areaCollisionShape=$Area2D/CollisionShape2D
+
+
 var velocityy = Vector2(1,0)
 var speed =600
 
@@ -27,7 +29,7 @@ func changeCollisionShape(collisionShape):
 func handleCollision(collision_info):
 	if collision_info.get_collider().is_in_group("enemy"):
 		collision_info.get_collider().get_damaged()
-	$breakSound.play()
-	await get_tree().create_timer(1).timeout
-	
+	$beaksound.play()
+	#await get_tree().create_timer(3).timeout
+	#
 	self.queue_free()
