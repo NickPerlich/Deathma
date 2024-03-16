@@ -101,6 +101,8 @@ func deactivateRageMode():
 	rageMode = false
 	rageScore = 0
 	
+func addRage(amount):
+	rageScore += amount
 func _set_health(value):
 	#if health <= 0
 		#die
@@ -116,6 +118,7 @@ func _on_tongue_hooked(hooked_position):
 	velocity = self.get_position() - hooked_position
 
 func shoot(mouse_position):
+	addRage(2)
 	$shootSound.play()
 	var bullet = bulletList.pop_back()
 	var projectile = projectilePath.instantiate()
@@ -143,6 +146,7 @@ func _on_tongue_collected(texture, collisionShape, rect_region):
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("enemy_projectile"):
 		if health > 0 and !rageMode:
+			addRage(3)
 			healthbar.decrease_health(20)
 			$hurtSound.play()
 			print("player damaged")

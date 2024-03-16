@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bldae3kbycf61"]
+[gd_scene load_steps=29 format=3 uid="uid://bldae3kbycf61"]
 
 [ext_resource type="Texture2D" uid="uid://bmpvu5yh55rd5" path="res://Art/lvl1-tiles/Room_Builder_free_32x32.png" id="1_7btcj"]
 [ext_resource type="Texture2D" uid="uid://bk8gxtybtpvn" path="res://Art/lvl1-tiles/Interiors_free_48x48.png" id="3_hxtcl"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dfp0t8kiya1gh" path="res://banana_bread.tscn" id="10_svgc6"]
 [ext_resource type="Texture2D" uid="uid://bt37vhnyui7xe" path="res://Interiors_free_48x48.png" id="11_4igl5"]
 [ext_resource type="PackedScene" uid="uid://cn1lfdrwpfhnr" path="res://Characters/enemy.tscn" id="12_igiyr"]
+[ext_resource type="AudioStream" uid="uid://ef8hryncnv1v" path="res://sounds/nostalgic playlist for daydreaming.mp3" id="13_bqd6o"]
 [ext_resource type="AudioStream" uid="uid://cy0s8fososke" path="res://sounds/SlurpLick - Sound Effect for editing.mp3" id="14_b7w6i"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_n7fuu"]
@@ -10865,6 +10866,10 @@ player = NodePath("../player")
 position = Vector2(435, -767)
 moveSpeed = 130
 player = NodePath("../player")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_bqd6o")
+autoplay = true
 
 [connection signal="collected" from="player/pivot/Tongue" to="player" method="_on_tongue_collected"]
 [connection signal="hooked" from="player/pivot/Tongue" to="player" method="_on_tongue_hooked"]
