@@ -12,6 +12,9 @@ var curCollisionShape = 0
 var curRect_region = 0
 var bulletList = []
 var level2 = false
+var rageMode = false
+var rageScore = 20;
+var rageMaxTime = 10
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -56,15 +59,28 @@ func _physics_process(delta):
 	else:
 		sprite_2d.animation = "default"
 		
+	#Rage control
+	if Input.is_action_just_pressed("enterRage"):
+		if rageScore < 10:
+			print("not enough rage")
+		else: 
+			#enter Rage
+			enterRageMode()
+		
 func _process(delta):
 	var mouse_pos = get_global_mouse_position()
 	var player_pos = get_global_position()
 	$Node2D.look_at(mouse_pos)
-	if Input.is_action_just_pressed("shoot"):
-		if bulletList.size():
-			shoot(mouse_pos)
-			inventory.use_first_available_item()
-			bulletCount -=1
+	if Input.is_action_just_pressed("shoot") :
+		if !rageMode:
+			if bulletList.size():
+				shoot(mouse_pos)
+				inventory.use_first_available_item()
+				bulletCount -=1
+			
+		else:
+			#rage swipe
+			print("rage swipe")
 	if healthbar.health <= 0:
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
@@ -75,6 +91,16 @@ func _process(delta):
 	#await get_tree().create_timer(1.0).timeout
 		#get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
 		#
+func enterRageMode():
+	rageMode = true
+	print("in raged")
+	await get_tree().create_timer(20).timeout
+	deactivateRageMode()
+	
+func deactivateRageMode():
+	rageMode = false
+	rageScore = 0
+	
 func _set_health(value):
 	#if health <= 0
 		#die
@@ -116,10 +142,12 @@ func _on_tongue_collected(texture, collisionShape, rect_region):
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("enemy_projectile"):
-		if health > 0:
+		if health > 0 and !rageMode:
 			healthbar.decrease_health(20)
 			$hurtSound.play()
-		print("player damaged")
+			print("player damaged")
+		else:
+			print("cant damage rageMa")
 		
 	if area.is_in_group("portal"):
 		level2 = true
