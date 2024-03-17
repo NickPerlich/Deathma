@@ -146,5 +146,10 @@ shape = SubResource("CircleShape2D_c6xeh")
 wait_time = 0.1
 autostart = true
 
+[node name="DamageVisualTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
 [connection signal="timeout" from="PathTimer" to="." method="_on_path_timer_timeout"]
+[connection signal="timeout" from="DamageVisualTimer" to="." method="_on_damage_visual_timer_timeout"]
