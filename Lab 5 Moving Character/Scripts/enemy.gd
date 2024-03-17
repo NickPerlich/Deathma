@@ -8,12 +8,15 @@ var counter = 0
 @onready var nav_agent = $NavigationAgent2D
 @onready var sprite_2d = $Sprite2D
 
-var health = 2
+var health = 1
 
 # moves the enemy in a direction that is updated by the navigation agent
 func _physics_process(_delta: float) -> void:
 	var direction = to_local(nav_agent.get_next_path_position()).normalized()
-	velocity = direction * moveSpeed
+	if nav_agent.target_position.distance_to(position) > 700:
+		velocity = Vector2(0,0)
+	else:
+		velocity = direction * moveSpeed
 	sprite_2d.play("enemy-l")
 	move_and_slide()
 	
@@ -35,7 +38,6 @@ func fire(speed):
 	inst(Vector2(speed, 0))
 	inst(Vector2(-speed, 0))
 	
-	
 # on timer timeout the enemy updates the direction of its path toward the player
 func _on_path_timer_timeout():
 	update_path()
@@ -49,3 +51,4 @@ func get_damaged():
 		queue_free()
 	else:
 		health -= 1
+		
