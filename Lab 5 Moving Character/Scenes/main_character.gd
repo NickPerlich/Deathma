@@ -89,6 +89,7 @@ func _process(delta):
 			 
 		elif !smackbool:
 			#rage swipe
+			$slap.play()
 			rageSmack(mouse_pos)
 			
 	if healthbar.health <= 0:

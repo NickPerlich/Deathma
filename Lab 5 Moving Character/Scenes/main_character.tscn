@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://tfq3pp1u838k"]
+[gd_scene load_steps=25 format=3 uid="uid://tfq3pp1u838k"]
 
 [ext_resource type="Script" path="res://Scenes/main_character.gd" id="1_6hlhd"]
 [ext_resource type="Texture2D" uid="uid://tiy2sp03g01p" path="res://ma-down.PNG" id="2_m6861"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://co4d4m0xn8ohk" path="res://ma-up.PNG" id="5_xy6j6"]
 [ext_resource type="AudioStream" uid="uid://dcanc22ud7jci" path="res://sounds/spitSound.mp3" id="6_ys27p"]
 [ext_resource type="AudioStream" uid="uid://6x210hcx7kix" path="res://sounds/Ouch - Sound Effect-[AudioTrimmer.com].mp3" id="7_1nc11"]
+[ext_resource type="AudioStream" uid="uid://jmj1sgrso7t0" path="res://sounds/SLAP - Sound Effect-[AudioTrimmer.com].mp3" id="8_mw5o5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5j1lb"]
 atlas = ExtResource("2_m6861")
@@ -172,5 +173,8 @@ pitch_scale = 1.72
 
 [node name="hurtSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_1nc11")
+
+[node name="slap" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_mw5o5")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
