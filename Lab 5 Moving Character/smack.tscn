@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://u1nytbf3w0he"]
+
+[ext_resource type="Script" path="res://smack.gd" id="1_2cmtl"]
+[ext_resource type="Texture2D" uid="uid://neg12qsoweso" path="res://Art/icon.svg" id="2_yg6sr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yluk0"]
+size = Vector2(20, 19)
+
+[node name="Smack" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+collision_mask = 5
+script = ExtResource("1_2cmtl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_yluk0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yg6sr")

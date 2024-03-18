@@ -28,7 +28,7 @@ func changeCollisionShape(collisionShape):
 
 func handleCollision(collision_info):
 	if collision_info.get_collider().is_in_group("enemy"):
-		collision_info.get_collider().get_damaged()
+		collision_info.get_collider().get_damaged(1)
 	#$beaksound.play()
 	#await get_tree().create_timer(3).timeout
 	#

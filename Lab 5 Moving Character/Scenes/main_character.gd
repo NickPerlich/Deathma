@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const projectilePath = preload("res://projectile.tscn")
+const smackPath = preload("res://smack.tscn")
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var sprite_2d = $Sprite2D
@@ -15,6 +16,8 @@ var level2 = false
 var rageMode = false
 var rageScore = 20;
 var rageMaxTime = 10
+var smackbool = false
+var kickMode = false
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -46,6 +49,7 @@ func _physics_process(delta):
 	#collision logic
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
+		handle_char_collision(collision)
 	
 	# movement
 	if Input.is_action_pressed("input_left"):
@@ -67,6 +71,11 @@ func _physics_process(delta):
 			#enter Rage
 			enterRageMode()
 		
+func handle_char_collision(col):
+	var collider = col.get_collider()
+	if collider.is_in_group("enemy") and kickMode:
+		collider.get_damaged(2)
+		
 func _process(delta):
 	var mouse_pos = get_global_mouse_position()
 	var player_pos = get_global_position()
@@ -77,10 +86,11 @@ func _process(delta):
 				shoot(mouse_pos)
 				inventory.use_first_available_item()
 				bulletCount -=1
-			
-		else:
+			 
+		elif !smackbool:
 			#rage swipe
-			print("rage swipe")
+			rageSmack(mouse_pos)
+			
 	if healthbar.health <= 0:
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
@@ -118,19 +128,40 @@ func _on_tongue_hooked(hooked_position):
 	velocity = self.get_position() - hooked_position
 
 func shoot(mouse_position):
-	addRage(2)
-	$shootSound.play()
-	var bullet = bulletList.pop_back()
-	var projectile = projectilePath.instantiate()
-	projectile.changeCollisionShape(bullet.collisionShape)
-	projectile.changeTexture(bullet.texture,bullet.rect_region)
-	get_parent().add_child(projectile)
-	
-	projectile.position = $Node2D/Marker2D.global_position
-	var direction = (mouse_position - projectile.global_position).normalized()
-	projectile.velocityy = direction
-	
+		addRage(2)
+		$shootSound.play()
+		var bullet = bulletList.pop_back()
+		var projectile = projectilePath.instantiate()
+		projectile.changeCollisionShape(bullet.collisionShape)
+		projectile.changeTexture(bullet.texture,bullet.rect_region)
+		get_parent().add_child(projectile)
+		
+		projectile.position = $Node2D/Marker2D.global_position
+		var direction = (mouse_position - projectile.global_position).normalized()
+		projectile.velocityy = direction
 
+func rageSmack(mouse_position):
+	print("rage smack")
+	
+	smackbool = true
+	var smack = smackPath.instantiate()
+	get_parent().add_child(smack)
+	smack.position = $Node2D/Marker2D.global_position
+	
+	
+	if is_instance_valid(smack):
+		await get_tree().create_timer(.2).timeout
+		if is_instance_valid(smack):
+			smack.queue_free() 
+		smackbool = false
+	
+func handle_rage_jump(pos):
+	await get_tree().create_timer(0.2).timeout
+	var tween = get_tree().create_tween()
+	kickMode = true
+	tween.tween_property(self, "position",Vector2(pos)-$pivot.position, .3)
+	await tween.finished
+	kickMode = false
 
 func _on_tongue_collected(texture, collisionShape, rect_region):
 	bulletCount += 1
@@ -141,7 +172,7 @@ func _on_tongue_collected(texture, collisionShape, rect_region):
 	}
 	bulletList.append(bullet)
 
-	pass # Replace with function body.
+	
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("enemy_projectile"):
@@ -152,6 +183,6 @@ func _on_area_2d_area_entered(area):
 			print("player damaged")
 		else:
 			print("cant damage rageMa")
-		
+
 	if area.is_in_group("portal"):
 		level2 = true
