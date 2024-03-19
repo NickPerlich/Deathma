@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4i6sx1hd0e10"]
+
+[ext_resource type="Script" path="res://Scripts/spiral_spit_projectile.gd" id="1_ao8ls"]
+[ext_resource type="Texture2D" uid="uid://c2jcvwopae0y2" path="res://Art/Spit.png" id="2_lf1pn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k7lqj"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_efsrg"]
+radius = 5.0
+
+[node name="SpiralSpitProjectile" type="CharacterBody2D" groups=["enemyProjectile"]]
+texture_filter = 1
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_ao8ls")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.992157, 0.494118, 0.588235, 1)
+texture = ExtResource("2_lf1pn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_k7lqj")
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemy_projectile"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_efsrg")
