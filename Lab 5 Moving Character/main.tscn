@@ -10866,7 +10866,6 @@ player = NodePath("../player")
 position = Vector2(807, -800)
 moveSpeed = 130
 player = NodePath("../player")
-fire_pattern = 1
 
 [node name="Enemy3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("12_igiyr")]
 position = Vector2(435, -767)
