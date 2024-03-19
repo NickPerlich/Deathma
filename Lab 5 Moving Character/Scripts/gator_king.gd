@@ -1,4 +1,3 @@
-class_name Enemy
 extends CharacterBody2D
 
 enum FirePattern {
@@ -15,7 +14,7 @@ var straight_projectile_speed: int = 100
 var spiral_projectile: PackedScene = preload("res://Characters/spiral_spit_projectile.tscn")
 var spiral_projectile_speed:int = 50
 var counter: int = 0
-var health: int = 2
+var health: int = 4
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
@@ -91,5 +90,9 @@ func get_damaged(damage):
 	else:
 		print(health)
 		health -= damage
+		if health % 2 == 0:
+			fire_pattern = FirePattern.STRAIGHT
+		else:
+			fire_pattern = FirePattern.SPIRAL
 		
 		

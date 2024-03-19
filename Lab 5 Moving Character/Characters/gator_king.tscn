@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://0tporct0er1u"]
+
+[ext_resource type="Script" path="res://Scripts/gator_king.gd" id="1_staph"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_74gy8"]
+
+[node name="GatorKing" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 19
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_staph")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_74gy8")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="FireTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="DamageVisualTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="PathTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
+[connection signal="timeout" from="DamageVisualTimer" to="." method="_on_damage_visual_timer_timeout"]
