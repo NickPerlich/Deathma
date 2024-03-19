@@ -1,10 +1,18 @@
 extends CharacterBody2D
 
+enum FirePattern {
+	STRAIGHT,
+	SPIRAL,
+}
+
 @export var moveSpeed: int = 80
 @export var player: Node2D
+@export var fire_pattern: FirePattern = FirePattern.STRAIGHT
 
-var projectile: PackedScene = preload("res://Characters/spit_projectile.tscn")
-var projectileSpeed: int = 100
+var straight_projectile: PackedScene = preload("res://Characters/spit_projectile.tscn")
+var straight_projectile_speed: int = 100
+var spiral_projectile: PackedScene = preload("res://Characters/spiral_spit_projectile.tscn")
+var spiral_projectile_speed:int = 50
 var counter: int = 0
 var health: int = 2
 
@@ -38,22 +46,31 @@ func _on_path_timer_timeout():
 # COMBAT RELATED METHODS
 	
 # instantiates a projectile and initializes its speed and size
-func inst(projectileVelocity: Vector2):
-	var projectileInstance = projectile.instantiate()
-	add_child(projectileInstance)
-	projectileInstance.scale *= .4
-	projectileInstance.velocity = projectileVelocity
+func straight_inst(projectile_velocity: Vector2):
+	var projectile_instance = straight_projectile.instantiate()
+	add_child(projectile_instance)
+	projectile_instance.scale *= .4
+	projectile_instance.velocity = projectile_velocity
 	
 # fires projectiles in a pattern specific to this enemy
-func fire(speed):
-	inst(Vector2(0, speed))
-	inst(Vector2(0, -speed))
-	inst(Vector2(speed, 0))
-	inst(Vector2(-speed, 0))
+func straight_fire(speed):
+	straight_inst(Vector2(0, speed))
+	straight_inst(Vector2(0, -speed))
+	straight_inst(Vector2(speed, 0))
+	straight_inst(Vector2(-speed, 0))
+
+func spiral_inst(speed: int):
+	var projectile_instance = spiral_projectile.instantiate()
+	add_child(projectile_instance)
+	projectile_instance.scale *= .4
+	projectile_instance.speed = speed
 
 # on timer timeout the enemy fires projectiles
 func _on_fire_timer_timeout():
-	fire(projectileSpeed)		
+	if fire_pattern == FirePattern.STRAIGHT:
+		straight_fire(straight_projectile_speed)
+	else:
+		spiral_inst(spiral_projectile_speed)		
 
 #HEALTH RELATED METHODS
 
