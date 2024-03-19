@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -400.0
 @onready var sprite_2d = $Sprite2D
 @onready var healthbar = $Healthbar
 @onready var inventory = $Inventory
+@onready var rage_anim = $AnimationPlayer
 var bulletCount = 0
 var curTexture = 0
 var curCollisionShape = 0
@@ -105,7 +106,8 @@ func _process(delta):
 func enterRageMode():
 	rageMode = true
 	print("in raged")
-	await get_tree().create_timer(20).timeout
+	rage_anim.play("Rage Overlay")
+	await get_tree().create_timer(10).timeout
 	deactivateRageMode()
 	
 func deactivateRageMode():

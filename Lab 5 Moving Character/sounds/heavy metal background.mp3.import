@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://xmmhs5vhsfme"
+path="res://.godot/imported/heavy metal background.mp3-bc19f5c15c526e51b5023a02215f171e.mp3str"
+
+[deps]
+
+source_file="res://sounds/heavy metal background.mp3"
+dest_files=["res://.godot/imported/heavy metal background.mp3-bc19f5c15c526e51b5023a02215f171e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

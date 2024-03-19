@@ -1,19 +1,20 @@
-[gd_scene load_steps=30 format=3 uid="uid://bldae3kbycf61"]
+[gd_scene load_steps=35 format=3 uid="uid://bldae3kbycf61"]
 
 [ext_resource type="Texture2D" uid="uid://bmpvu5yh55rd5" path="res://Art/lvl1-tiles/Room_Builder_free_32x32.png" id="1_7btcj"]
 [ext_resource type="Texture2D" uid="uid://bk8gxtybtpvn" path="res://Art/lvl1-tiles/Interiors_free_48x48.png" id="3_hxtcl"]
 [ext_resource type="PackedScene" uid="uid://tfq3pp1u838k" path="res://Scenes/main_character.tscn" id="3_jtcbk"]
+[ext_resource type="Texture2D" uid="uid://7sooffgw7uum" path="res://Art/Damage_landscape.png" id="3_ls85t"]
 [ext_resource type="Texture2D" uid="uid://dsnt3x7aoy3wq" path="res://index.icon.png" id="4_8v5f6"]
 [ext_resource type="Script" path="res://pivot.gd" id="4_qmk0w"]
 [ext_resource type="PackedScene" uid="uid://b0tvg7515be52" path="res://inventory.tscn" id="5_ohhde"]
 [ext_resource type="Script" path="res://Tongue.gd" id="5_xw844"]
 [ext_resource type="PackedScene" uid="uid://btx1r1cvwc4sb" path="res://ui/healthbar/healthbar.tscn" id="7_82pyh"]
 [ext_resource type="PackedScene" uid="uid://dfp0t8kiya1gh" path="res://banana_bread.tscn" id="10_svgc6"]
-[ext_resource type="Texture2D" uid="uid://bt37vhnyui7xe" path="res://Interiors_free_48x48.png" id="11_4igl5"]
+[ext_resource type="Texture2D" uid="uid://dcvemsyqsr2bd" path="res://Interiors_free_48x48.png" id="11_4igl5"]
+[ext_resource type="AudioStream" uid="uid://xmmhs5vhsfme" path="res://sounds/heavy metal background.mp3" id="11_of35c"]
 [ext_resource type="PackedScene" uid="uid://cn1lfdrwpfhnr" path="res://Characters/enemy.tscn" id="12_igiyr"]
 [ext_resource type="AudioStream" uid="uid://ef8hryncnv1v" path="res://sounds/nostalgic playlist for daydreaming.mp3" id="13_bqd6o"]
 [ext_resource type="AudioStream" uid="uid://cy0s8fososke" path="res://sounds/SlurpLick - Sound Effect for editing.mp3" id="14_b7w6i"]
-[ext_resource type="AudioStream" uid="uid://bhda06cik71io" path="res://sounds/Heavy object Hit and body thud sound effect-[AudioTrimmer.com].mp3" id="14_yvxbp"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_n7fuu"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -10527,6 +10528,165 @@ texture = ExtResource("3_hxtcl")
 [sub_resource type="TileSet" id="TileSet_feuni"]
 sources/2 = SubResource("TileSetAtlasSource_tyvwd")
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_ugw5w"]
+
+[sub_resource type="Animation" id="Animation_364gh"]
+resource_name = "Rage Overlay"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53, 1.02, 1.63, 2.36, 2.93, 3.82, 4.65, 5.52, 6.36, 7.07, 8.45, 9.37, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.494118), Color(1, 1, 1, 1), Color(1, 1, 1, 0.45098), Color(1, 1, 1, 1), Color(1, 1, 1, 0.47451), Color(1, 1, 1, 1), Color(1, 1, 1, 0.52549), Color(1, 1, 1, 1), Color(1, 1, 1, 0.560784), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../rage_red_overlay:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.06, 4.93, 5.82, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.054902, 0, 0), Color(1, 0.054902, 0, 0.25098), Color(1, 0.054902, 0, 0.427451), Color(1, 0.054902, 0, 0.403922), Color(1, 0.054902, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.00999999, 0.47, 0.99, 1.55416, 2.43416, 3.30182, 4.12182, 4.71598, 5.28598, 6.10182, 7.44182, 8.53364, 9.72364),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.23, 9.85),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../rage_audio:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../rage_audio:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(-15, 0.14, 1.2, 8.64, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -80.0, -15.075, -15.075, -80.0]
+}
+
+[sub_resource type="Animation" id="Animation_wkpge"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../rage_red_overlay:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.054902, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../rage_audio:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../rage_audio:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-80.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ref7"]
+_data = {
+"RESET": SubResource("Animation_wkpge"),
+"Rage Overlay": SubResource("Animation_364gh")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsl46"]
 size = Vector2(57, 56)
 
@@ -10613,7 +10773,44 @@ metadata/_edit_use_anchors_ = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
+[node name="rage_red_overlay" type="TextureRect" parent="player"]
+modulate = Color(1, 0.054902, 0, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -414.0
+offset_top = -244.0
+offset_right = 413.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_ugw5w")
+
+[node name="blood_overlay" type="TextureRect" parent="player"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -397.0
+offset_top = -227.0
+offset_right = 401.0
+offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ls85t")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
+root_node = NodePath("../blood_overlay")
+libraries = {
+"": SubResource("AnimationLibrary_0ref7")
+}
+
 [node name="Inventory" parent="player" instance=ExtResource("5_ohhde")]
+
+[node name="rage_audio" type="AudioStreamPlayer" parent="player"]
+stream = ExtResource("11_of35c")
+volume_db = -80.0
 
 [node name="Walls" type="StaticBody2D" parent="." groups=["collectable"]]
 position = Vector2(165, 118)
@@ -10877,7 +11074,7 @@ stream = ExtResource("13_bqd6o")
 autoplay = true
 
 [node name="beaksound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("14_yvxbp")
+stream = ExtResource("11_of35c")
 
 [connection signal="collected" from="player/pivot/Tongue" to="player" method="_on_tongue_collected"]
 [connection signal="hooked" from="player/pivot/Tongue" to="player" method="_on_tongue_hooked"]
