@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxrk33ivxb6b5"
-path="res://.godot/imported/jump.png-ce03cb1088b7b54732874dc2c9f3e7f4.ctex"
+uid="uid://cjtb2am8r44uu"
+path="res://.godot/imported/hell.png-d883e317cf0e2972776b88e2e56ea94e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/jump.png"
-dest_files=["res://.godot/imported/jump.png-ce03cb1088b7b54732874dc2c9f3e7f4.ctex"]
+source_file="res://Art/hell.png"
+dest_files=["res://.godot/imported/hell.png-d883e317cf0e2972776b88e2e56ea94e.ctex"]
 
 [params]
 

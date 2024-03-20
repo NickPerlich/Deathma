@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgue0kg12hhsg"
-path="res://.godot/imported/frog-R-1 (1).png-8440bccc6e9000414d06ffcfe3b22f9d.ctex"
+uid="uid://ckfyhf2jinuru"
+path="res://.godot/imported/Terrain (16x16).png-d19a2ef21a8748b1ae9d23e15ce86959.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/frog-R-1 (1).png"
-dest_files=["res://.godot/imported/frog-R-1 (1).png-8440bccc6e9000414d06ffcfe3b22f9d.ctex"]
+source_file="res://Art/Terrain (16x16).png"
+dest_files=["res://.godot/imported/Terrain (16x16).png-d19a2ef21a8748b1ae9d23e15ce86959.ctex"]
 
 [params]
 
