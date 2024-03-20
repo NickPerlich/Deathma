@@ -84,7 +84,7 @@ func visualize_damage():
 # take damage
 func get_damaged(damage):
 	visualize_damage()
-	if health < 0:
+	if health <= 0:
 		await damage_visual_timer.timeout
 		queue_free()
 	else:
