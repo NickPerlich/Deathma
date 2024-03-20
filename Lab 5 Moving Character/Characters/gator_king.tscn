@@ -22,7 +22,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_74gy8"]
@@ -39,6 +39,7 @@ script = ExtResource("1_staph")
 position = Vector2(-5, 13)
 scale = Vector2(3.08594, 3.08594)
 sprite_frames = SubResource("SpriteFrames_ga4l7")
+frame_progress = 0.953067
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 4)

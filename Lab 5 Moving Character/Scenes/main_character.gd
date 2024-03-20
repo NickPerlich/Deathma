@@ -64,6 +64,8 @@ func _physics_process(delta):
 		sprite_2d.animation = "ma-up"
 	elif Input.is_action_pressed("input_down"):
 		sprite_2d.animation = "ma-down"
+	elif Input.is_key_pressed(KEY_G) and rageMode:
+		sprite_2d.animation = "ma-rage"
 	else:
 		sprite_2d.animation = "default"
 		
