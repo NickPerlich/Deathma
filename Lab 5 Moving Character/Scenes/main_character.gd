@@ -4,6 +4,7 @@ const projectilePath = preload("res://projectile.tscn")
 const smackPath = preload("res://smack.tscn")
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+const RAGE_METER_SCALE_FACTOR = 10
 @onready var sprite_2d = $Sprite2D
 @onready var healthbar = $Healthbar
 @onready var inventory = $Inventory
@@ -115,7 +116,10 @@ func deactivateRageMode():
 	rageScore = 0
 	
 func addRage(amount):
+	var rage_meter = $RageMeter
 	rageScore += amount
+	rage_meter.value = rageScore * RAGE_METER_SCALE_FACTOR
+	
 func _set_health(value):
 	#if health <= 0
 		#die

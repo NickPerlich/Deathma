@@ -177,4 +177,12 @@ stream = ExtResource("7_1nc11")
 [node name="slap" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_mw5o5")
 
+[node name="RageMeter" type="ProgressBar" parent="."]
+modulate = Color(0.858824, 0.239216, 0.14902, 1)
+offset_left = -15.0
+offset_top = -58.3333
+offset_right = 47.0
+offset_bottom = -49.3333
+show_percentage = false
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
