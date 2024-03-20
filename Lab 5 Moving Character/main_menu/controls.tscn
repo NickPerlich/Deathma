@@ -57,15 +57,55 @@ layout_mode = 2
 theme_override_constants/separation = 32
 alignment = 1
 
-[node name="Label" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Seperator3" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator6" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator5" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator4" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator2" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label2" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_nxaib")
-theme_override_font_sizes/font_size = 54
-text = "[enter backstory]
-[enter controls]"
+theme_override_font_sizes/font_size = 20
+text = "After a long day of work at Home Depot, 
+Grandma Denise returns to her home, thrilled t
+o converse with her beloved grandson, Dennis. 
+She opens her door, and her excitement 
+quickly turns to dread as she is met by a home 
+invasion of the Evil Gator King’s mantis troops, 
+and no sight of her sweet Dennis.
 
-[node name="Seperator" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+The Gator King, fueled by his relentless desire 
+to capture Dennis after seeing his talent in 
+wielding Ninja stars, has succeeded in spiriting 
+him away to his dark, underground hellscape.
+
+"
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nxaib")
+theme_override_font_sizes/font_size = 20
+text = "It's time for Grandma to take action. She will 
+need to use her special abilities to outwit the m
+antis opps and follow the trail of open portals t
+o defeat the supposedly sinister Gator King. 
+However, there may be a darker side to 
+Grandma Denise than what we see…
+"
 
 [node name="Back_Button" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 50)

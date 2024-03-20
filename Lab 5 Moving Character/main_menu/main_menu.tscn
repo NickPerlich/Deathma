@@ -78,7 +78,7 @@ custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_lkslf")
 theme_override_font_sizes/font_size = 24
-text = "CONTROLS"
+text = "BACKSTORY"
 
 [node name="Exit_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 50)
