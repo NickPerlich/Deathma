@@ -10715,7 +10715,7 @@ size = Vector2(65, 87.3438)
 size = Vector2(58.5, 81.8438)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4giou"]
-size = Vector2(53, 105)
+size = Vector2(123, 160)
 
 [node name="Node" type="Node"]
 
@@ -11020,23 +11020,23 @@ region_rect = Rect2(573.743, 2706.92, 49.303, 111.821)
 position = Vector2(-3.5, -1.5)
 shape = SubResource("RectangleShape2D_4giou")
 
-[node name="portal" type="StaticBody2D" parent="collectibles/lamp4" groups=["collectible"]]
-position = Vector2(511, -1611)
+[node name="portal" type="StaticBody2D" parent="." groups=["collectible"]]
+position = Vector2(1004, -1451)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/lamp4/portal" groups=["collectible"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portal" groups=["collectible"]]
 position = Vector2(-6, -4)
 shape = SubResource("RectangleShape2D_4giou")
 
-[node name="lamp" type="Sprite2D" parent="collectibles/lamp4/portal"]
+[node name="lamp" type="Sprite2D" parent="portal"]
 position = Vector2(-3, 2)
 texture = ExtResource("3_hxtcl")
 region_enabled = true
 region_rect = Rect2(488.914, 33.774, 130, 171)
 
-[node name="Area2D" type="Area2D" parent="collectibles/lamp4/portal" groups=["portal"]]
+[node name="Area2D" type="Area2D" parent="portal" groups=["portal"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/lamp4/portal/Area2D" groups=["collectible"]]
-position = Vector2(-5.5, -3.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portal/Area2D" groups=["collectible"]]
+position = Vector2(-6.5, -4)
 shape = SubResource("RectangleShape2D_4giou")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -11059,13 +11059,8 @@ position = Vector2(712, -1465)
 moveSpeed = 130
 player = NodePath("../player")
 
-[node name="Enemy2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("12_igiyr")]
-position = Vector2(807, -800)
-moveSpeed = 130
-player = NodePath("../player")
-
 [node name="Enemy3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("12_igiyr")]
-position = Vector2(435, -767)
+position = Vector2(232, -421)
 moveSpeed = 130
 player = NodePath("../player")
 

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_sxpng"]
 [ext_resource type="FontFile" uid="uid://db17q61ni7fri" path="res://Art/MetalMania-Regular.ttf" id="2_lkslf"]
 [ext_resource type="Texture2D" uid="uid://v0xc14h81lw3" path="res://Art/Nate Idle 1.png" id="4_50qtu"]
-[ext_resource type="Texture2D" uid="uid://tiy2sp03g01p" path="res://ma-down.PNG" id="5_pbn23"]
+[ext_resource type="Texture2D" uid="uid://tiy2sp03g01p" path="res://Art/ma-down.PNG" id="5_pbn23"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3

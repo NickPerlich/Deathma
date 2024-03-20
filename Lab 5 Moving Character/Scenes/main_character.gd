@@ -15,6 +15,7 @@ var curCollisionShape = 0
 var curRect_region = 0
 var bulletList = []
 var level2 = false
+var level3 = false
 var rageMode = false
 var rageScore = 0;
 var rageMaxTime = 10
@@ -98,8 +99,9 @@ func _process(delta):
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
 	if level2 == true:
-		get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
-		
+		get_tree().change_scene_to_file("res://level2.tscn")
+	if level3 == true:
+		get_tree().change_scene_to_file("res://level3.tscn")
 
 	#await get_tree().create_timer(1.0).timeout
 		#get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
@@ -193,3 +195,6 @@ func _on_area_2d_area_entered(area):
 
 	if area.is_in_group("portal"):
 		level2 = true
+	
+	if area.is_in_group("portal2"):
+		level3 = true

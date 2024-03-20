@@ -1,64 +1,64 @@
 [gd_scene load_steps=25 format=3 uid="uid://tfq3pp1u838k"]
 
 [ext_resource type="Script" path="res://Scenes/main_character.gd" id="1_6hlhd"]
-[ext_resource type="Texture2D" uid="uid://tiy2sp03g01p" path="res://ma-down.PNG" id="2_m6861"]
-[ext_resource type="Texture2D" uid="uid://dp7johyfyhmje" path="res://ma-left.PNG" id="3_kcbl6"]
-[ext_resource type="Texture2D" uid="uid://fspmosytvqxh" path="res://ma-right.PNG" id="4_54sdq"]
-[ext_resource type="Texture2D" uid="uid://co4d4m0xn8ohk" path="res://ma-up.PNG" id="5_xy6j6"]
+[ext_resource type="Texture2D" uid="uid://tiy2sp03g01p" path="res://Art/ma-down.PNG" id="2_pvlv3"]
+[ext_resource type="Texture2D" uid="uid://dp7johyfyhmje" path="res://Art/ma-left.PNG" id="3_edckk"]
+[ext_resource type="Texture2D" uid="uid://fspmosytvqxh" path="res://Art/ma-right.PNG" id="4_2ooeh"]
+[ext_resource type="Texture2D" uid="uid://co4d4m0xn8ohk" path="res://Art/ma-up.PNG" id="5_ldha7"]
 [ext_resource type="AudioStream" uid="uid://dcanc22ud7jci" path="res://sounds/spitSound.mp3" id="6_ys27p"]
 [ext_resource type="AudioStream" uid="uid://6x210hcx7kix" path="res://sounds/Ouch - Sound Effect-[AudioTrimmer.com].mp3" id="7_1nc11"]
 [ext_resource type="AudioStream" uid="uid://jmj1sgrso7t0" path="res://sounds/SLAP - Sound Effect-[AudioTrimmer.com].mp3" id="8_mw5o5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5j1lb"]
-atlas = ExtResource("2_m6861")
+atlas = ExtResource("2_pvlv3")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y7ctg"]
-atlas = ExtResource("2_m6861")
+atlas = ExtResource("2_pvlv3")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pmmsy"]
-atlas = ExtResource("2_m6861")
+atlas = ExtResource("2_pvlv3")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_285ck"]
-atlas = ExtResource("2_m6861")
+atlas = ExtResource("2_pvlv3")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gfkg1"]
-atlas = ExtResource("3_kcbl6")
+atlas = ExtResource("3_edckk")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yxfoo"]
-atlas = ExtResource("3_kcbl6")
+atlas = ExtResource("3_edckk")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i81b8"]
-atlas = ExtResource("3_kcbl6")
+atlas = ExtResource("3_edckk")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3b1t5"]
-atlas = ExtResource("4_54sdq")
+atlas = ExtResource("4_2ooeh")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2utm1"]
-atlas = ExtResource("4_54sdq")
+atlas = ExtResource("4_2ooeh")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7kjme"]
-atlas = ExtResource("4_54sdq")
+atlas = ExtResource("4_2ooeh")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ajq7v"]
-atlas = ExtResource("5_xy6j6")
+atlas = ExtResource("5_ldha7")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wiu73"]
-atlas = ExtResource("5_xy6j6")
+atlas = ExtResource("5_ldha7")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8wwoi"]
-atlas = ExtResource("5_xy6j6")
+atlas = ExtResource("5_ldha7")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_obbra"]
@@ -178,11 +178,9 @@ stream = ExtResource("7_1nc11")
 stream = ExtResource("8_mw5o5")
 
 [node name="RageMeter" type="ProgressBar" parent="."]
-modulate = Color(0.858824, 0.239216, 0.14902, 1)
-offset_left = -15.0
-offset_top = -58.3333
-offset_right = 47.0
-offset_bottom = -49.3333
-show_percentage = false
+offset_left = 39.6667
+offset_top = -0.666667
+offset_right = 43.6667
+offset_bottom = 26.3333
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
