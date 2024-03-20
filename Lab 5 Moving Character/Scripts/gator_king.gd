@@ -30,7 +30,7 @@ func _physics_process(_delta: float) -> void:
 		velocity = Vector2(0,0)
 	else:
 		velocity = direction * moveSpeed
-	sprite_2d.play("enemy-l")
+	sprite_2d.play("default")
 	move_and_slide()
 
 # MOVEMENT RELATED METHODS
@@ -59,18 +59,18 @@ func straight_fire(speed):
 	straight_inst(Vector2(speed, 0))
 	straight_inst(Vector2(-speed, 0))
 
-func spiral_fire(speed: int):
-	var projectile_instance = spiral_projectile.instantiate()
-	add_child(projectile_instance)
-	projectile_instance.scale *= .4
-	projectile_instance.speed = speed
+#func spiral_fire(speed: int):
+	#var projectile_instance = spiral_projectile.instantiate()
+	#add_child(projectile_instance)
+	#projectile_instance.scale *= .4
+	#projectile_instance.speed = speed
 
 # on timer timeout the enemy fires projectiles
 func _on_fire_timer_timeout():
-	if fire_pattern == FirePattern.STRAIGHT:
-		straight_fire(straight_projectile_speed)
-	else:
-		spiral_fire(spiral_projectile_speed)		
+	#if fire_pattern == FirePattern.STRAIGHT:
+	straight_fire(straight_projectile_speed)
+	#else:
+		# spiral_fire(spiral_projectile_speed)		
 
 #HEALTH RELATED METHODS
 
@@ -90,9 +90,9 @@ func get_damaged(damage):
 	else:
 		print(health)
 		health -= damage
-		if health % 2 == 0:
-			fire_pattern = FirePattern.STRAIGHT
-		else:
-			fire_pattern = FirePattern.SPIRAL
+		#if health % 2 == 0:
+			#fire_pattern = FirePattern.STRAIGHT
+		#else:
+			#fire_pattern = FirePattern.SPIRAL
 		
 		
