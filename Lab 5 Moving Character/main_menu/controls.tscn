@@ -60,9 +60,14 @@ alignment = 1
 [node name="Label" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_nxaib")
-theme_override_font_sizes/font_size = 54
-text = "[enter backstory]
-[enter controls]"
+theme_override_font_sizes/font_size = 42
+text = "
+
+WASD / arrows to move
+space to tongue grapple local items
+point and click to shoot items
+g to activate ragema when ragemeter 100%
+"
 
 [node name="Seperator" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2

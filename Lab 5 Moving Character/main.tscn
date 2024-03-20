@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bldae3kbycf61"]
+[gd_scene load_steps=36 format=3 uid="uid://bldae3kbycf61"]
 
 [ext_resource type="Texture2D" uid="uid://bmpvu5yh55rd5" path="res://Art/lvl1-tiles/Room_Builder_free_32x32.png" id="1_s6ihy"]
 [ext_resource type="Texture2D" uid="uid://bk8gxtybtpvn" path="res://Art/lvl1-tiles/Interiors_free_48x48.png" id="2_mmdue"]
@@ -10681,10 +10681,14 @@ tracks/5/keys = {
 "values": [0.0, -80.0, -15.075, -15.075, -80.0]
 }
 
+[sub_resource type="Animation" id="Animation_tyk28"]
+resource_name = "rage"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0ref7"]
 _data = {
 "RESET": SubResource("Animation_wkpge"),
-"Rage Overlay": SubResource("Animation_364gh")
+"Rage Overlay": SubResource("Animation_364gh"),
+"rage": SubResource("Animation_tyk28")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsl46"]

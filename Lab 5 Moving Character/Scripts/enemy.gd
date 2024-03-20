@@ -32,6 +32,7 @@ func _physics_process(_delta: float) -> void:
 	else:
 		velocity = direction * moveSpeed
 	sprite_2d.play("enemy-l")
+	sprite_2d.flip_h = true
 	move_and_slide()
 
 # MOVEMENT RELATED METHODS

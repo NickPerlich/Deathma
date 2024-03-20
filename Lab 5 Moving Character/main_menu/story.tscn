@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1xg5ges1y4cw"]
+
+[ext_resource type="Script" path="res://Controls.gd" id="1_ecdie"]
+[ext_resource type="Texture2D" uid="uid://7d0peql5v6db" path="res://Art/obstacle.png" id="2_jnnaq"]
+[ext_resource type="FontFile" uid="uid://db17q61ni7fri" path="res://Art/MetalMania-Regular.ttf" id="3_puyws"]
+[ext_resource type="Texture2D" uid="uid://c0j2uwc7mt6lo" path="res://Art/gator.PNG" id="4_88rex"]
+[ext_resource type="Texture2D" uid="uid://cd54sughoboe" path="res://frog-R.png" id="5_1s4vv"]
+
+[node name="Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ecdie")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jnnaq")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Seperator" type="Control" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_puyws")
+theme_override_font_sizes/font_size = 80
+text = "DEATHMA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_puyws")
+theme_override_font_sizes/font_size = 16
+text = "After a long day of work at Home Depot, Grandma Denise returns to her home, thrilled to converse with her beloved grandson, Dennis. She opens her door, and her excitement quickly turns to dread as she is met by a home invasion of the Evil Gator King’s mantis troops, and no sight of her sweet Dennis.
+
+The Gator King, fueled by his relentless desire to capture Dennis after seeing his talent in wielding Ninja stars, has succeeded in spiriting him away to his dark, underground hellscape.
+
+It's time for Grandma to take action. She will need to use her special abilities to outwit the mantis opps and follow the trail of open portals to defeat the supposedly sinister Gator King. However, there may be a darker side to Grandma Denise than what we see…
+"
+
+[node name="Seperator" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Back_Button" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_puyws")
+theme_override_font_sizes/font_size = 30
+text = "BACK
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+position = Vector2(748, 493)
+scale = Vector2(2.58264, 2.58264)
+texture = ExtResource("4_88rex")
+region_enabled = true
+region_rect = Rect2(0, 0, 121.522, 128)
+
+[node name="Sprite2D2" type="Sprite2D" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+position = Vector2(-129, 223)
+scale = Vector2(3.39847, 3.39847)
+texture = ExtResource("5_1s4vv")
+region_enabled = true
+region_rect = Rect2(0, 0, 58.9464, 56.7428)
