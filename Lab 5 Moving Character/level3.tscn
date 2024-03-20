@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bmpvu5yh55rd5" path="res://Art/lvl1-tiles/Room_Builder_free_32x32.png" id="5_es8vi"]
 [ext_resource type="PackedScene" uid="uid://tfq3pp1u838k" path="res://Scenes/main_character.tscn" id="6_m7ra5"]
 [ext_resource type="Script" path="res://pivot.gd" id="7_05kkq"]
-[ext_resource type="Texture2D" uid="uid://dsnt3x7aoy3wq" path="res://index.icon.png" id="8_ovqt1"]
+[ext_resource type="Texture2D" uid="uid://cffsqvoep87pi" path="res://Scenes/download-1.png" id="8_iheg1"]
 [ext_resource type="Script" path="res://Tongue.gd" id="9_oexlc"]
 [ext_resource type="AudioStream" uid="uid://cy0s8fososke" path="res://sounds/SlurpLick - Sound Effect for editing.mp3" id="10_w54bs"]
 [ext_resource type="PackedScene" uid="uid://btx1r1cvwc4sb" path="res://ui/healthbar/healthbar.tscn" id="11_5r7i5"]
@@ -8974,7 +8974,7 @@ texture_repeat = 2
 position = Vector2(32, -3.00001)
 rotation = -1.5708
 scale = Vector2(1.14982, 1)
-texture = ExtResource("8_ovqt1")
+texture = ExtResource("8_iheg1")
 region_enabled = true
 script = ExtResource("9_oexlc")
 
