@@ -89,11 +89,13 @@ theme_override_font_sizes/font_size = 24
 text = "EXIT"
 
 [node name="Ma-down" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(576, 589)
 scale = Vector2(4.07812, 4.07812)
 texture = ExtResource("5_pbn23")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(913.016, 339.422)
 scale = Vector2(2.34375, 2.34375)
 texture = ExtResource("5_ks711")
@@ -101,11 +103,13 @@ region_enabled = true
 region_rect = Rect2(142.741, 5.48733, 99.7894, 113.397)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(977.016, 424.422)
 scale = Vector2(1.75, 1.8125)
 texture = ExtResource("6_tj4hv")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(231.016, 341.422)
 scale = Vector2(2.34375, 2.34375)
 texture = ExtResource("5_ks711")
@@ -113,6 +117,7 @@ region_enabled = true
 region_rect = Rect2(142.741, 5.48733, 99.7894, 113.397)
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(295.016, 426.422)
 scale = Vector2(1.75, 1.8125)
 texture = ExtResource("6_tj4hv")

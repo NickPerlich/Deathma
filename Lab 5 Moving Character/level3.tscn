@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://db56uye04hx5k"]
+[gd_scene load_steps=90 format=3 uid="uid://dxalbnubuamm7"]
 
 [ext_resource type="Texture2D" uid="uid://bt78vuuxem01l" path="res://Art/decorative.png" id="1_aisan"]
 [ext_resource type="Texture2D" uid="uid://dn7o5w1h5d8iu" path="res://Art/mainlevbuild.png" id="2_oer31"]
@@ -9105,6 +9105,7 @@ position = Vector2(-47, -52)
 shape = SubResource("RectangleShape2D_68u08")
 
 [node name="pots" type="Sprite2D" parent="collectibles/box"]
+texture_filter = 1
 position = Vector2(-47.1708, -53.9667)
 scale = Vector2(2.94455, 2.36666)
 texture = ExtResource("3_t4wu5")
@@ -9119,6 +9120,7 @@ position = Vector2(-47, -72.5)
 shape = SubResource("RectangleShape2D_68u08")
 
 [node name="pots" type="Sprite2D" parent="collectibles/box2"]
+texture_filter = 1
 position = Vector2(-47.1708, -53.9667)
 scale = Vector2(2.94455, 2.36666)
 texture = ExtResource("3_t4wu5")
@@ -9133,6 +9135,7 @@ position = Vector2(-47, -70)
 shape = SubResource("RectangleShape2D_68u08")
 
 [node name="pots" type="Sprite2D" parent="collectibles/box3"]
+texture_filter = 1
 position = Vector2(-47.1708, -53.9667)
 scale = Vector2(2.94455, 2.36666)
 texture = ExtResource("3_t4wu5")
@@ -9147,6 +9150,7 @@ position = Vector2(-48, -73)
 shape = SubResource("RectangleShape2D_68u08")
 
 [node name="pots" type="Sprite2D" parent="collectibles/box4"]
+texture_filter = 1
 position = Vector2(-47.1708, -53.9667)
 scale = Vector2(2.94455, 2.36666)
 texture = ExtResource("3_t4wu5")
@@ -9161,6 +9165,7 @@ position = Vector2(-47, -74)
 shape = SubResource("RectangleShape2D_68u08")
 
 [node name="pots" type="Sprite2D" parent="collectibles/rocks3"]
+texture_filter = 1
 position = Vector2(-47.1708, -53.9667)
 scale = Vector2(2.94455, 2.36666)
 texture = ExtResource("3_t4wu5")
@@ -9175,6 +9180,7 @@ position = Vector2(-68.5, -74)
 shape = SubResource("RectangleShape2D_68u08")
 
 [node name="pots" type="Sprite2D" parent="collectibles/rocks5"]
+texture_filter = 1
 position = Vector2(-62.5567, -66.333)
 scale = Vector2(3.8496, 3.0941)
 texture = ExtResource("3_t4wu5")
@@ -9189,6 +9195,7 @@ position = Vector2(-68.5, -74)
 shape = SubResource("RectangleShape2D_68u08")
 
 [node name="pots" type="Sprite2D" parent="collectibles/rocks6"]
+texture_filter = 1
 position = Vector2(-62.5567, -66.333)
 scale = Vector2(3.8496, 3.0941)
 texture = ExtResource("3_t4wu5")
@@ -9203,6 +9210,7 @@ position = Vector2(-68.5, -74)
 shape = SubResource("RectangleShape2D_68u08")
 
 [node name="pots" type="Sprite2D" parent="collectibles/rocks7"]
+texture_filter = 1
 position = Vector2(-62.5567, -66.333)
 scale = Vector2(3.8496, 3.0941)
 texture = ExtResource("3_t4wu5")
@@ -9217,6 +9225,7 @@ position = Vector2(-68.5, -74)
 shape = SubResource("RectangleShape2D_68u08")
 
 [node name="pots" type="Sprite2D" parent="collectibles/rocks8"]
+texture_filter = 1
 position = Vector2(-62.5567, -66.333)
 scale = Vector2(3.8496, 3.0941)
 texture = ExtResource("3_t4wu5")
@@ -9231,6 +9240,7 @@ position = Vector2(-68.5, -74)
 shape = SubResource("RectangleShape2D_68u08")
 
 [node name="pots" type="Sprite2D" parent="collectibles/rocks9"]
+texture_filter = 1
 position = Vector2(-62.5567, -66.333)
 scale = Vector2(3.8496, 3.0941)
 texture = ExtResource("3_t4wu5")
@@ -9245,6 +9255,7 @@ position = Vector2(-68.5, -74)
 shape = SubResource("RectangleShape2D_68u08")
 
 [node name="pots" type="Sprite2D" parent="collectibles/rocks10"]
+texture_filter = 1
 position = Vector2(-62.5567, -66.333)
 scale = Vector2(3.8496, 3.0941)
 texture = ExtResource("3_t4wu5")
@@ -9259,6 +9270,7 @@ position = Vector2(-68.5, -74)
 shape = SubResource("RectangleShape2D_68u08")
 
 [node name="pots" type="Sprite2D" parent="collectibles/rocks12"]
+texture_filter = 1
 position = Vector2(-62.5567, -66.333)
 scale = Vector2(3.8496, 3.0941)
 texture = ExtResource("3_t4wu5")
@@ -9273,6 +9285,7 @@ position = Vector2(-46, -73)
 shape = SubResource("RectangleShape2D_68u08")
 
 [node name="pots" type="Sprite2D" parent="collectibles/box6"]
+texture_filter = 1
 position = Vector2(-47.1708, -53.9667)
 scale = Vector2(2.94455, 2.36666)
 texture = ExtResource("3_t4wu5")
@@ -9287,6 +9300,7 @@ position = Vector2(-47, -73)
 shape = SubResource("RectangleShape2D_68u08")
 
 [node name="pots" type="Sprite2D" parent="collectibles/box8"]
+texture_filter = 1
 position = Vector2(-47.1708, -53.9667)
 scale = Vector2(2.94455, 2.36666)
 texture = ExtResource("3_t4wu5")
@@ -9383,9 +9397,9 @@ texture = ExtResource("23_2fh8x")
 region_enabled = true
 region_rect = Rect2(486.744, 28.574, 135, 182)
 
-[node name="Area2D" type="Area2D" parent="Sprite2D" groups=["portal3"]]
+[node name="Area2D" type="Area2D" parent="Sprite2D" groups=["end-portal"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" groups=["end-portal"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
 position = Vector2(-1.5, -1.5)
 shape = SubResource("RectangleShape2D_aqe60")
 
@@ -9414,6 +9428,7 @@ position = Vector2(-3068, 1689.01)
 stream = ExtResource("14_3ra2y")
 
 [node name="GatorKing" parent="." instance=ExtResource("26_dcwm2")]
+texture_filter = 1
 position = Vector2(-2026, -2236.99)
 
 [connection signal="collected" from="player/pivot/Tongue" to="player" method="_on_tongue_collected"]
