@@ -11065,7 +11065,7 @@ moveSpeed = 130
 player = NodePath("../player")
 
 [node name="Enemy3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_q2kg2")]
-position = Vector2(232, -421)
+position = Vector2(240, -797)
 moveSpeed = 130
 player = NodePath("../player")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://cnyomkj6wg744"]
+[gd_scene load_steps=73 format=3 uid="uid://bjasnevgmw65j"]
 
 [ext_resource type="Texture2D" uid="uid://bmpvu5yh55rd5" path="res://Art/lvl1-tiles/Room_Builder_free_32x32.png" id="1_flc44"]
 [ext_resource type="Texture2D" uid="uid://bt78vuuxem01l" path="res://Art/decorative.png" id="2_xadlm"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bxbsvpajyibrg" path="res://lamp.png" id="5_ko842"]
 [ext_resource type="PackedScene" uid="uid://tfq3pp1u838k" path="res://Scenes/main_character.tscn" id="6_jbape"]
 [ext_resource type="Script" path="res://pivot.gd" id="7_deow3"]
-[ext_resource type="Texture2D" uid="uid://dsnt3x7aoy3wq" path="res://index.icon.png" id="8_wak0x"]
+[ext_resource type="Texture2D" uid="uid://0p7ysw0lr5f3" path="res://Scripts/download-1.png" id="8_vw35w"]
 [ext_resource type="Script" path="res://Tongue.gd" id="9_wcd6y"]
 [ext_resource type="AudioStream" uid="uid://cy0s8fososke" path="res://sounds/SlurpLick - Sound Effect for editing.mp3" id="10_gg5ug"]
 [ext_resource type="PackedScene" uid="uid://btx1r1cvwc4sb" path="res://ui/healthbar/healthbar.tscn" id="11_w2sqb"]
@@ -38937,7 +38937,7 @@ texture_repeat = 2
 position = Vector2(32, -3.00001)
 rotation = -1.5708
 scale = Vector2(1.14982, 1)
-texture = ExtResource("8_wak0x")
+texture = ExtResource("8_vw35w")
 region_enabled = true
 script = ExtResource("9_wcd6y")
 

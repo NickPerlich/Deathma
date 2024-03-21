@@ -129,7 +129,7 @@ script = ExtResource("1_4vy6n")
 position = Vector2(2, 1.6)
 scale = Vector2(0.6125, 0.6125)
 sprite_frames = SubResource("SpriteFrames_mqql7")
-animation = &"enemy-d"
+animation = &"enemy-t"
 
 [node name="FireTimer" type="Timer" parent="."]
 process_callback = 0
