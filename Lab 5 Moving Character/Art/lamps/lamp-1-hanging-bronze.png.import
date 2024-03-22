@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8bo41ppfl8xy"
-path="res://.godot/imported/ma-left.PNG-400d2a14e9ace01cb4f227bf55b0b1f1.ctex"
+uid="uid://6o1p0vbd47ov"
+path="res://.godot/imported/lamp-1-hanging-bronze.png-f7a09cf35a6d02d65e2910ba9da1e22f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ma-left.PNG"
-dest_files=["res://.godot/imported/ma-left.PNG-400d2a14e9ace01cb4f227bf55b0b1f1.ctex"]
+source_file="res://Art/lamps/lamp-1-hanging-bronze.png"
+dest_files=["res://.godot/imported/lamp-1-hanging-bronze.png-f7a09cf35a6d02d65e2910ba9da1e22f.ctex"]
 
 [params]
 

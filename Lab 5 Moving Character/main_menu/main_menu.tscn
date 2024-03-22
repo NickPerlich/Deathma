@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_sxpng"]
 [ext_resource type="FontFile" uid="uid://db17q61ni7fri" path="res://Art/MetalMania-Regular.ttf" id="2_lkslf"]
 [ext_resource type="Texture2D" uid="uid://c0j2uwc7mt6lo" path="res://Art/gator.PNG" id="5_ks711"]
-[ext_resource type="Texture2D" uid="uid://tiy2sp03g01p" path="res://Art/ma-down.PNG" id="5_pbn23"]
+[ext_resource type="Texture2D" uid="uid://cw55t4lccjj1g" path="res://Art/ma-down.PNG" id="5_pbn23"]
 [ext_resource type="Texture2D" uid="uid://cd54sughoboe" path="res://frog-R.png" id="6_tj4hv"]
 
 [node name="Main_Menu" type="Control"]

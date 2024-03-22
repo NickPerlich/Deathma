@@ -1,8 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://0tporct0er1u"]
+[gd_scene load_steps=7 format=3 uid="uid://0tporct0er1u"]
 
 [ext_resource type="Script" path="res://Scripts/gator_king.gd" id="1_staph"]
+[ext_resource type="Texture2D" uid="uid://c0j2uwc7mt6lo" path="res://Art/gator.PNG" id="2_k8bu5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cijqe"]
+atlas = ExtResource("2_k8bu5")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o550k"]
+atlas = ExtResource("2_k8bu5")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ga4l7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cijqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o550k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_74gy8"]
+radius = 141.057
 
 [node name="GatorKing" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
@@ -11,9 +35,14 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_staph")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, 13)
+scale = Vector2(3.08594, 3.08594)
+sprite_frames = SubResource("SpriteFrames_ga4l7")
+frame_progress = 0.953067
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 4)
 shape = SubResource("CircleShape2D_74gy8")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

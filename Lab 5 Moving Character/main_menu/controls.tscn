@@ -34,9 +34,6 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_constants/separation = 60
 
-[node name="Seperator" type="Control" parent="TextureRect/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
 [node name="title" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -57,6 +54,8 @@ layout_mode = 2
 theme_override_constants/separation = 32
 alignment = 1
 
+<<<<<<< HEAD
+=======
 [node name="Seperator3" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
@@ -66,6 +65,7 @@ layout_mode = 2
 [node name="Seperator5" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
+>>>>>>> main
 [node name="Seperator4" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
@@ -74,6 +74,47 @@ layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+<<<<<<< HEAD
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nxaib")
+theme_override_font_sizes/font_size = 35
+text = "
+
+WASD / arrows to move
+space to tongue 
+grapple local items
+point and click to shoot items
+g to activate 
+ragema when ragemeter 100%
+"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nxaib")
+theme_override_font_sizes/font_size = 20
+text = "
+
+
+After returning from work, 
+Grandma Denise discovers 
+her home invaded 
+by the Evil Gator King's 
+mantis troops and 
+her grandson Dennis 
+kidnapped due to 
+his ninja star talent.
+ Determined, she sets 
+out to use her special
+ abilities to navigate 
+through portals, defeat 
+the Gator King, and 
+uncover secrets hinting
+ at her own darker side"
+horizontal_alignment = 1
+=======
 theme_override_constants/separation = 50
 
 [node name="Label2" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
@@ -106,6 +147,7 @@ o defeat the supposedly sinister Gator King.
 However, there may be a darker side to 
 Grandma Denise than what we see…
 "
+>>>>>>> main
 
 [node name="Back_Button" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 50)

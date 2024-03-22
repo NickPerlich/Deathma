@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1bj30hkifjkn"
-path="res://.godot/imported/ma-down.PNG-84423c0740686a76cbc74e9866aa769d.ctex"
+uid="uid://c7ny18lflhxkf"
+path="res://.godot/imported/lamp-2-post-2-short-single-blue.png-f1e1f8baa63ce9374ef73a577695e55d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ma-down.PNG"
-dest_files=["res://.godot/imported/ma-down.PNG-84423c0740686a76cbc74e9866aa769d.ctex"]
+source_file="res://Art/lamps/lamp-2-post-2-short-single-blue.png"
+dest_files=["res://.godot/imported/lamp-2-post-2-short-single-blue.png-f1e1f8baa63ce9374ef73a577695e55d.ctex"]
 
 [params]
 

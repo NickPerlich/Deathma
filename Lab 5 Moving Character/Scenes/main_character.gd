@@ -15,6 +15,8 @@ var curCollisionShape = 0
 var curRect_region = 0
 var bulletList = []
 var level2 = false
+var level3 = false
+var level0 = false
 var rageMode = false
 var rageScore = 0;
 var rageMaxTime = 10
@@ -54,16 +56,19 @@ func _physics_process(delta):
 		handle_char_collision(collision)
 	
 	# movement
-	if Input.is_action_pressed("input_left"):
-		sprite_2d.animation = "ma-left"
-	elif Input.is_action_pressed("input_right"):
-		sprite_2d.animation = "ma-right"
-	elif Input.is_action_pressed("input_up"):
-		sprite_2d.animation = "ma-up"
-	elif Input.is_action_pressed("input_down"):
-		sprite_2d.animation = "ma-down"
-	else:
-		sprite_2d.animation = "default"
+	if !rageMode:
+		if Input.is_action_pressed("input_left"):
+			sprite_2d.animation = "ma-left"
+		elif Input.is_action_pressed("input_right"):
+			sprite_2d.animation = "ma-right"
+		elif Input.is_action_pressed("input_up"):
+			sprite_2d.animation = "ma-up"
+		elif Input.is_action_pressed("input_down"):
+			sprite_2d.animation = "ma-down"
+		#elif Input.is_key_pressed(KEY_G) and rageMode:
+			#sprite_2d.animation = "ma-rage"
+		else:
+			sprite_2d.animation = "default"
 		
 	#Rage control
 	if Input.is_action_just_pressed("enterRage"):
@@ -98,8 +103,11 @@ func _process(delta):
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
 	if level2 == true:
-		get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
-		
+		get_tree().change_scene_to_file("res://level2.tscn")
+	if level3 == true:
+		get_tree().change_scene_to_file("res://level3.tscn")
+	if level0 == true:
+		get_tree().change_scene_to_file("res://main_menu/end.tscn")
 
 	#await get_tree().create_timer(1.0).timeout
 		#get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
@@ -108,6 +116,7 @@ func enterRageMode():
 	rageMode = true
 	print("in raged")
 	rage_anim.play("Rage Overlay")
+	sprite_2d.play("ma-rage")
 	await get_tree().create_timer(10).timeout
 	deactivateRageMode()
 	
@@ -193,3 +202,10 @@ func _on_area_2d_area_entered(area):
 
 	if area.is_in_group("portal"):
 		level2 = true
+	
+	if area.is_in_group("portal2"):
+		level3 = true
+
+	if area.is_in_group("end-portal"):
+		level0 = true
+	

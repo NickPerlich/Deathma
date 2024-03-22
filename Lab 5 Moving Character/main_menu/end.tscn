@@ -1,0 +1,101 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctlreyuuoirdv"]
+
+[ext_resource type="Script" path="res://main_menu/end.gd" id="1_77d4o"]
+[ext_resource type="Texture2D" uid="uid://7d0peql5v6db" path="res://Art/obstacle.png" id="2_10ond"]
+[ext_resource type="FontFile" uid="uid://db17q61ni7fri" path="res://Art/MetalMania-Regular.ttf" id="3_wnpql"]
+[ext_resource type="Texture2D" uid="uid://cd54sughoboe" path="res://frog-R.png" id="4_6q2wn"]
+[ext_resource type="Texture2D" uid="uid://cw55t4lccjj1g" path="res://Art/ma-down.PNG" id="5_bwkxb"]
+
+[node name="End" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_77d4o")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_10ond")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 112.0
+offset_right = -114.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="title" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_wnpql")
+theme_override_font_sizes/font_size = 80
+text = "the end"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Seperator4" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator2" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wnpql")
+theme_override_font_sizes/font_size = 35
+text = "
+After a long and treacherous journey,
+deathma has finally destroyed
+the gator king and reunited
+with her beloved dennis."
+horizontal_alignment = 1
+
+[node name="Back_Button" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wnpql")
+theme_override_font_sizes/font_size = 30
+text = "BACK
+"
+
+[node name="Frog-r" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(211, 449)
+scale = Vector2(3.09375, 3.09375)
+texture = ExtResource("4_6q2wn")
+
+[node name="Ma-down" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(381, 424)
+scale = Vector2(6.77907, 6.77907)
+texture = ExtResource("5_bwkxb")
+region_enabled = true
+region_rect = Rect2(77, 14, 44, 43)

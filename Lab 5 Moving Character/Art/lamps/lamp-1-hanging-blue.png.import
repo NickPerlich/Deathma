@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgue0kg12hhsg"
-path="res://.godot/imported/frog-R-1 (1).png-8440bccc6e9000414d06ffcfe3b22f9d.ctex"
+uid="uid://djvey8obxxn6l"
+path="res://.godot/imported/lamp-1-hanging-blue.png-39d1ca163f9ee13f64542607eb3b04c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/frog-R-1 (1).png"
-dest_files=["res://.godot/imported/frog-R-1 (1).png-8440bccc6e9000414d06ffcfe3b22f9d.ctex"]
+source_file="res://Art/lamps/lamp-1-hanging-blue.png"
+dest_files=["res://.godot/imported/lamp-1-hanging-blue.png-39d1ca163f9ee13f64542607eb3b04c3.ctex"]
 
 [params]
 

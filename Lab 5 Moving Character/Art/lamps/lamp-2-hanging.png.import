@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxrk33ivxb6b5"
-path="res://.godot/imported/jump.png-ce03cb1088b7b54732874dc2c9f3e7f4.ctex"
+uid="uid://cpwufk64gsdr0"
+path="res://.godot/imported/lamp-2-hanging.png-ea8091bb58f60f868fd549ecadae0921.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/jump.png"
-dest_files=["res://.godot/imported/jump.png-ce03cb1088b7b54732874dc2c9f3e7f4.ctex"]
+source_file="res://Art/lamps/lamp-2-hanging.png"
+dest_files=["res://.godot/imported/lamp-2-hanging.png-ea8091bb58f60f868fd549ecadae0921.ctex"]
 
 [params]
 
