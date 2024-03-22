@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bt78vuuxem01l" path="res://Art/decorative.png" id="1_aisan"]
 [ext_resource type="Texture2D" uid="uid://dn7o5w1h5d8iu" path="res://Art/mainlevbuild.png" id="2_oer31"]
 [ext_resource type="Texture2D" uid="uid://cjtb2am8r44uu" path="res://Art/hell.png" id="3_t4wu5"]
-[ext_resource type="Texture2D" uid="uid://bdqke3x35qlek" path="res://Terrain (16x16).png" id="4_vca4s"]
+[ext_resource type="Texture2D" uid="uid://dpjw01d1olp6y" path="res://Terrain (16x16).png" id="4_vca4s"]
 [ext_resource type="Texture2D" uid="uid://bmpvu5yh55rd5" path="res://Art/lvl1-tiles/Room_Builder_free_32x32.png" id="5_es8vi"]
 [ext_resource type="PackedScene" uid="uid://tfq3pp1u838k" path="res://Scenes/main_character.tscn" id="6_m7ra5"]
 [ext_resource type="Script" path="res://pivot.gd" id="7_05kkq"]
@@ -9392,7 +9392,7 @@ position = Vector2(-7, -11.75)
 shape = SubResource("RectangleShape2D_0pr6e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1281, -2587.99)
+position = Vector2(-1802, -2598)
 texture = ExtResource("23_2fh8x")
 region_enabled = true
 region_rect = Rect2(486.744, 28.574, 135, 182)
@@ -9427,9 +9427,10 @@ autoplay = true
 position = Vector2(-3068, 1689.01)
 stream = ExtResource("14_3ra2y")
 
-[node name="GatorKing" parent="." instance=ExtResource("26_dcwm2")]
+[node name="GatorKing" parent="." node_paths=PackedStringArray("player") instance=ExtResource("26_dcwm2")]
 texture_filter = 1
-position = Vector2(-2026, -2236.99)
+position = Vector2(-1329, -2149)
+player = NodePath("../player")
 
 [connection signal="collected" from="player/pivot/Tongue" to="player" method="_on_tongue_collected"]
 [connection signal="hooked" from="player/pivot/Tongue" to="player" method="_on_tongue_hooked"]

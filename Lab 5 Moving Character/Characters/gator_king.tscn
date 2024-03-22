@@ -36,13 +36,13 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_staph")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-5, 13)
-scale = Vector2(3.08594, 3.08594)
+position = Vector2(-28.7501, -10.7501)
+scale = Vector2(2.71484, 2.71484)
 sprite_frames = SubResource("SpriteFrames_ga4l7")
 frame_progress = 0.953067
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, 4)
+position = Vector2(-34, -8)
 shape = SubResource("CircleShape2D_74gy8")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
