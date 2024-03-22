@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmpetja1h3ys7"]
+[gd_scene load_steps=6 format=3 uid="uid://ctlreyuuoirdv"]
 
 [ext_resource type="Script" path="res://main_menu/end.gd" id="1_77d4o"]
 [ext_resource type="Texture2D" uid="uid://7d0peql5v6db" path="res://Art/obstacle.png" id="2_10ond"]
 [ext_resource type="FontFile" uid="uid://db17q61ni7fri" path="res://Art/MetalMania-Regular.ttf" id="3_wnpql"]
 [ext_resource type="Texture2D" uid="uid://cd54sughoboe" path="res://frog-R.png" id="4_6q2wn"]
-[ext_resource type="Texture2D" uid="uid://tiy2sp03g01p" path="res://Art/ma-down.PNG" id="5_bwkxb"]
+[ext_resource type="Texture2D" uid="uid://cw55t4lccjj1g" path="res://Art/ma-down.PNG" id="5_bwkxb"]
 
 [node name="End" type="Control"]
 layout_mode = 3
